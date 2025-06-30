@@ -159,6 +159,6 @@
 }
 
 .header-account-link:nth-child(2):hover {
-  background-color: var(--primary);
+  background-color: var(--color-primary);
   color: var(--foreground);
 }
