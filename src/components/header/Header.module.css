@@ -26,29 +26,6 @@
   width: 100%;
 }
 
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  width: 100%;
-}
-
-.header-logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.header-logo {
-  text-decoration: none;
-  color: var(--foreground);
-  font-family: var(--font-inter), Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 1.125rem;
-}
-
 .header-nav {
   display: flex;
 }
@@ -156,9 +133,4 @@
 .header-account-link:nth-child(2) {
   background-color: var(--foreground);
   color: var(--background);
-}
-
-.header-account-link:nth-child(2):hover {
-  background-color: var(--color-primary);
-  color: var(--foreground);
 }
