@@ -29,9 +29,17 @@ export const Header = () => {
                 </ButtonBase>
               </li>
               <li className={styles["nav-item"]}>
-                <Link href={"/help"} className={styles["nav-link"]}>
-                  Help
+                <Link href={"/media"} className={styles["nav-link"]}>
+                  Media
                 </Link>
+              </li>
+              <li className={styles["nav-item"]}>
+                <ButtonBase className={styles["nav-button"]}>
+                  Help
+                  <span>
+                    <ChevronDown className={styles["nav-icon"]} />
+                  </span>
+                </ButtonBase>
               </li>
             </ul>
           </nav>

@@ -1,16 +1,27 @@
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --color-primary: #56cfe1;
-  --color-primary-hover: #3abbd3;
-  --color-primary-active: #2aaac1;
-  --border: rgba(0, 0, 0, 0.2);
-  --font-inter: "Inter", sans-serif;
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --color-presenter: #ff8c42;
+  --color-planning: #766ce6;
+  --color-music: #3ddc97;
+  --color-community: #4a90e2;
+}
+
+[data-theme="light"] {
+  --bg-main: #ffffff;
+  --text-default: #000000;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-main: #000000;
+  --text-default: #ffffff;
+  --border: rgba(255, 255, 255, 0.2);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--text-default);
+  background-color: var(--bg-main);
   font-family: var(--font-inter), Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

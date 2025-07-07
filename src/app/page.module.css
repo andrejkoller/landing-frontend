@@ -1,9 +1,29 @@
-.home {
+.intro,
+.presenter,
+.planning,
+.music,
+.community,
+.footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--background-primary);
+}
+
+.presenter {
+  background-color: var(--color-presenter);
+}
+
+.planning {
+  background-color: var(--color-planning);
+}
+
+.music {
+  background-color: var(--color-music);
+}
+
+.community {
+  background-color: var(--color-community);
 }
