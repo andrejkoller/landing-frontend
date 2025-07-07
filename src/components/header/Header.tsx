@@ -4,55 +4,117 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 import { ButtonBase } from "@mui/material";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { Theme } from "../../../../planning/src/components/theme/Theme";
 
 export const Header = () => {
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const handleMouseEnter = (dropdown: string) => {
+    setActiveDropdown(dropdown);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveDropdown(null);
+  };
   return (
-    <header className={styles["header"]}>
-      <div className={styles["header-container"]}>
-        <div className={styles["header-content"]}>
-          <nav className={styles["header-nav"]} aria-label="Main Navigation">
-            <ul className={styles["nav-list"]}>
-              <li className={styles["nav-item"]}>
-                <ButtonBase className={styles["nav-button"]}>
+    <header className={styles.header}>
+      <div className={styles.headerContainer}>
+        <div className={styles.headerContent}>
+          <nav className={styles.headerNav} aria-label="Main Navigation">
+            <ul className={styles.navList}>
+              <li className={styles.navItem}>
+                <ButtonBase
+                  className={styles.navButton}
+                  onMouseEnter={() => handleMouseEnter("products")}
+                  onMouseLeave={handleMouseLeave}
+                >
                   Products
                   <span>
-                    <ChevronDown className={styles["nav-icon"]} />
+                    <ChevronDown className={styles.navIcon} />
                   </span>
                 </ButtonBase>
               </li>
-              <li className={styles["nav-item"]}>
-                <ButtonBase className={styles["nav-button"]}>
+              <li className={styles.navItem}>
+                <Link href={"/presenter"} className={styles.navLink}>
                   Pricing
-                  <span>
-                    <ChevronDown className={styles["nav-icon"]} />
-                  </span>
-                </ButtonBase>
+                </Link>
               </li>
-              <li className={styles["nav-item"]}>
-                <Link href={"/media"} className={styles["nav-link"]}>
+              <li className={styles.navItem}>
+                <Link href={"/media"} className={styles.navLink}>
                   Media
                 </Link>
               </li>
-              <li className={styles["nav-item"]}>
-                <ButtonBase className={styles["nav-button"]}>
+              <li className={styles.navItem}>
+                <ButtonBase
+                  className={styles.navButton}
+                  onMouseEnter={() => handleMouseEnter("help")}
+                  onMouseLeave={handleMouseLeave}
+                >
                   Help
                   <span>
-                    <ChevronDown className={styles["nav-icon"]} />
+                    <ChevronDown className={styles.navIcon} />
                   </span>
                 </ButtonBase>
               </li>
             </ul>
           </nav>
         </div>
-        <div className={styles["header-account-links-container"]}>
-          <Link href={"/signin"} className={styles["header-account-link"]}>
+        <div className={styles.headerAccountLinksContainer}>
+          <Link href={"/signin"} className={styles.headerAccountLink}>
             Log In
           </Link>
-          <Link href={"/signup"} className={styles["header-account-link"]}>
+          <Link href={"/signup"} className={styles.headerAccountLink}>
             Sign Up
           </Link>
         </div>
       </div>
+      {activeDropdown === "products" && (
+        <ul className={styles.dropdownMenu}>
+          <li className={styles.dropdownItem}>
+            <Link href={"/presenter"} className={styles.dropdownLink}>
+              Presenter
+            </Link>
+          </li>
+          <li className={styles.dropdownItem}>
+            <Link href={"/planning"} className={styles.dropdownLink}>
+              Planning
+            </Link>
+          </li>
+          <li className={styles.dropdownItem}>
+            <Link href={"/music"} className={styles.dropdownLink}>
+              Music
+            </Link>
+          </li>
+          <li className={styles.dropdownItem}>
+            <Link href={"/community"} className={styles.dropdownLink}>
+              Community
+            </Link>
+          </li>
+        </ul>
+      )}
+      {activeDropdown === "help" && (
+        <ul className={styles.dropdownMenu}>
+          <li className={styles.dropdownItem}>
+            <Link href={"/faq"} className={styles.dropdownLink}>
+              FAQ
+            </Link>
+          </li>
+          <li className={styles.dropdownItem}>
+            <Link href={"/faq"} className={styles.dropdownLink}>
+              Contact
+            </Link>
+          </li>
+          <li className={styles.dropdownItem}>
+            <Link href={"/faq"} className={styles.dropdownLink}>
+              Videos
+            </Link>
+          </li>
+          <li className={styles.dropdownItem}>
+            <Theme />
+          </li>
+        </ul>
+      )}
     </header>
   );
 };

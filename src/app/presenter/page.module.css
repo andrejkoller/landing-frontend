@@ -1,9 +1,8 @@
-.intro,
-.footer {
+.presenterSection {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  background-color: var(--color-presenter);
   height: 100vh;
   width: 100%;
 }

@@ -11,7 +11,7 @@
   background-color: var(--bg-main);
 }
 
-.header-container {
+.headerContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +20,7 @@
   margin: 0 auto;
 }
 
-.header-content {
+.headerContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,12 +28,12 @@
   width: 100%;
 }
 
-.header-nav {
+.headerNav {
   display: flex;
   width: 100%;
 }
 
-.nav-list {
+.navList {
   display: flex;
   align-items: center;
   flex: 1;
@@ -43,27 +43,27 @@
   gap: 1rem;
 }
 
-.nav-item {
+.navItem {
   position: relative;
 }
 
-.nav-item:last-child {
+.navItem:last-child {
   margin-left: auto;
   margin-right: 1rem;
 }
 
-.nav-button {
+.navButton {
   padding: 0.5rem 2rem 0.5rem 0.75rem !important;
   line-height: 1.6;
 }
 
-.nav-link {
+.navLink {
   padding: 0.5rem 0.75rem;
   line-height: 1.6;
 }
 
-.nav-link,
-.nav-button {
+.navLink,
+.navButton {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -73,8 +73,8 @@
   font-size: 1.125rem;
 }
 
-.nav-link::before,
-.nav-button::before {
+.navItem::before,
+.navButton::before {
   border-radius: 1.5625rem;
   bottom: 0.125rem;
   content: "";
@@ -85,19 +85,20 @@
   top: 0.125rem;
   width: unset;
   background-color: transparent;
+  cursor: pointer;
 }
 
-.nav-link:hover::before {
+.navItem:hover::before {
   border: 1px solid var(--border);
   opacity: 1;
 }
 
-.nav-button:hover::before {
+.navButton:hover::before {
   border: 1px solid var(--border);
   opacity: 1;
 }
 
-.nav-icon {
+.navIcon {
   width: 1rem;
   height: 1rem;
   margin-left: 0.5rem;
@@ -107,18 +108,18 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.nav-item:hover .nav-icon {
+.navItem:hover .navIcon {
   transform: translateY(-50%) rotate(180deg);
 }
 
-.header-account-links-container {
+.headerAccountLinksContainer {
   display: flex;
   align-items: center;
   height: 3rem;
   flex-shrink: 0;
 }
 
-.header-account-link {
+.headerAccountLink {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,11 +137,35 @@
   margin-left: 9px;
 }
 
-.header-account-link:hover {
+.headerAccountLink:hover {
   transform: scale(1.05);
 }
 
-.header-account-link:nth-child(2) {
+.headerAccountLink:nth-child(2) {
   background-color: var(--text-default);
   color: var(--bg-main);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--bg-main);
+  z-index: 1000;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdownItem {
+  list-style: none;
+  padding: 0.5rem 1rem;
+}
+
+.dropdownLink {
+  text-decoration: none;
+  color: var(--text-default);
+  font-family: var(--font-inter), Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
 }

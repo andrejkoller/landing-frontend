@@ -1,9 +1,8 @@
-.intro,
-.footer {
+.planningSection {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  background-color: var(--color-planning);
   height: 100vh;
   width: 100%;
 }
