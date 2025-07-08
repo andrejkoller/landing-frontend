@@ -5,7 +5,6 @@ import styles from "./Header.module.css";
 import { ButtonBase } from "@mui/material";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { Theme } from "../../../../planning/src/components/theme/Theme";
 
 export const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -83,7 +82,7 @@ export const Header = () => {
           </li>
           <li className={styles.dropdownItem}>
             <Link href={"/music"} className={styles.dropdownLink}>
-              Music
+              Charts
             </Link>
           </li>
           <li className={styles.dropdownItem}>
@@ -109,9 +108,6 @@ export const Header = () => {
             <Link href={"/faq"} className={styles.dropdownLink}>
               Videos
             </Link>
-          </li>
-          <li className={styles.dropdownItem}>
-            <Theme />
           </li>
         </ul>
       )}

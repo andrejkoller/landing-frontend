@@ -4,7 +4,6 @@ export default function Home() {
   return (
     <>
       <section className={styles.intro}></section>
-      <section className={styles.footer}></section>
     </>
   );
 }
