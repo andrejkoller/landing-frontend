@@ -94,7 +94,6 @@
 }
 
 .navButton:hover::before {
-  background-color: var(--bg-secondary);
   opacity: 1;
   z-index: -1;
 }

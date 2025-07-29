@@ -2,42 +2,38 @@
   --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
   --bg-main: #ffffff;
-  --bg-secondary: #e6f7ff;
   --text-default: #000000;
   --border: rgba(0, 0, 0, 0.1);
   --color-presenter: #c43d1b;
-  --color-planning: #3f51b5;
-  --color-charts: #1bc48c;
-  --color-community: #ff7043;
+  --color-planning: #1b68c4;
+  --color-charts: #1bc46d;
+  --color-community: #a21bc4;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-main: #000000;
-    --bg-secondary: #1a1a1a;
     --text-default: #ffffff;
     --border: rgba(255, 255, 255, 0.15);
     --color-presenter: #c43d1b;
-    --color-planning: #3f51b5;
-    --color-charts: #1bc48c;
-    --color-community: #ff7043;
+    --color-planning: #1b68c4;
+    --color-charts: #1bc46d;
+    --color-community: #a21bc4;
   }
 }
 
 [data-theme="light"] {
   --bg-main: #ffffff;
-  --bg-secondary: #d6f1ff;
   --text-default: #000000;
   --border: rgba(0, 0, 0, 0.1);
   --color-presenter: #c43d1b;
-  --color-planning: #3f51b5;
-  --color-charts: #1bc48c;
-  --color-community: #ff7043;
+  --color-planning: #1b68c4;
+  --color-charts: #1bc46d;
+  --color-community: #a21bc4;
 }
 
 [data-theme="dark"] {
   --bg-main: #000000;
-  --bg-secondary: #1a1a1a;
   --text-default: #ffffff;
   --border: rgba(255, 255, 255, 0.15);
   --color-presenter: #c43d1b;
