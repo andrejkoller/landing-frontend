@@ -4,10 +4,10 @@
   --bg-main: #ffffff;
   --text-default: #000000;
   --border: rgba(0, 0, 0, 0.1);
-  --color-presenter: #ff8c42;
-  --color-planning: #766ce6;
-  --color-music: #3ddc97;
-  --color-community: #4a90e2;
+  --color-presenter: #c43d1b;
+  --color-planning: #3f51b5;
+  --color-charts: #1bc48c;
+  --color-community: #ff7043;
 }
 
 body {
