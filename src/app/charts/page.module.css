@@ -1,8 +1,56 @@
-.musicSection {
+.chartsSection {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--color-charts);
-  height: 100vh;
+  justify-content: center;
+  height: 100%;
   width: 100%;
+}
+
+.chartsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.chartsContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.chartsIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-charts);
+}
+
+.chartsShowcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-main);
+}
+
+.chartsOutro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-charts);
 }

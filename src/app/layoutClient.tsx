@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer/Footer";
 import { Header } from "@/components/header/Header";
+import "@/app/globals.css";
 
 export default function LayoutClient({
   children,
@@ -9,7 +10,7 @@ export default function LayoutClient({
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="mainContent">{children}</main>
       <Footer />
     </>
   );
