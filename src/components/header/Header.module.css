@@ -94,8 +94,14 @@
 }
 
 .navButton:hover::before {
-  border: 1px solid var(--border);
+  background-color: var(--bg-secondary);
   opacity: 1;
+  z-index: -1;
+}
+
+.navButton:hover {
+  color: var(--text-primary);
+  z-index: 1;
 }
 
 .navIcon {
@@ -106,6 +112,7 @@
   top: 50%;
   transform: translateY(-50%) rotate(0);
   transition: transform 0.2s ease-in-out;
+  stroke: var(--text-default);
 }
 
 .navItem:hover .navIcon {

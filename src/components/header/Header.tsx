@@ -35,6 +35,18 @@ export const Header = () => {
                 </ButtonBase>
               </li>
               <li className={styles.navItem}>
+                <ButtonBase
+                  className={styles.navButton}
+                  onMouseEnter={() => handleMouseEnter("learn")}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  Learn
+                  <span>
+                    <ChevronDown className={styles.navIcon} />
+                  </span>
+                </ButtonBase>
+              </li>
+              <li className={styles.navItem}>
                 <Link href={"/presenter"} className={styles.navLink}>
                   Pricing
                 </Link>
@@ -45,16 +57,9 @@ export const Header = () => {
                 </Link>
               </li>
               <li className={styles.navItem}>
-                <ButtonBase
-                  className={styles.navButton}
-                  onMouseEnter={() => handleMouseEnter("help")}
-                  onMouseLeave={handleMouseLeave}
-                >
+                <Link href={"/help"} className={styles.navLink}>
                   Help
-                  <span>
-                    <ChevronDown className={styles.navIcon} />
-                  </span>
-                </ButtonBase>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -92,21 +97,21 @@ export const Header = () => {
           </li>
         </ul>
       )}
-      {activeDropdown === "help" && (
+      {activeDropdown === "learn" && (
         <ul className={styles.dropdownMenu}>
           <li className={styles.dropdownItem}>
-            <Link href={"/faq"} className={styles.dropdownLink}>
-              FAQ
+            <Link href={"/tutorials"} className={styles.dropdownLink}>
+              Tutorials
             </Link>
           </li>
           <li className={styles.dropdownItem}>
-            <Link href={"/faq"} className={styles.dropdownLink}>
-              Contact
+            <Link href={"/blog"} className={styles.dropdownLink}>
+              Blog
             </Link>
           </li>
           <li className={styles.dropdownItem}>
-            <Link href={"/faq"} className={styles.dropdownLink}>
-              Videos
+            <Link href={"/features"} className={styles.dropdownLink}>
+              Features
             </Link>
           </li>
         </ul>

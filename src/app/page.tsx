@@ -7,7 +7,12 @@ export default function Home() {
         <div className={styles.startContainer}>
           <div className={styles.startContent}>
             <div className={styles.startIntro}></div>
-            <div className={styles.startShowcase}></div>
+            <div className={styles.startShowcase}>
+              <div className={styles.presenter}></div>
+              <div className={styles.planning}></div>
+              <div className={styles.charts}></div>
+              <div className={styles.community}></div>
+            </div>
             <div className={styles.startOutro}></div>
           </div>
         </div>
