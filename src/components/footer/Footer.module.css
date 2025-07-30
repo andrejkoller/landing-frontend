@@ -2,8 +2,87 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: var(--bg-main);
   color: var(--text-default);
-  height: 100vh;
+  height: calc(100vh - 5.5rem);
   width: 100%;
+}
+
+.footerContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 1440px;
+  height: 100%;
+  width: 100%;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.footerLogoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.footerLinksContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerProductColumn,
+.footerCompanyColumn,
+.footerLearnColumn,
+.footerSocialColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerProductColumn h3,
+.footerCompanyColumn h3,
+.footerLearnColumn h3,
+.footerSocialColumn h3 {
+  margin: 0 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.footerProductColumn ul,
+.footerCompanyColumn ul,
+.footerLearnColumn ul,
+.footerSocialColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerProductColumn li,
+.footerCompanyColumn li,
+.footerLearnColumn li,
+.footerSocialColumn li {
+  padding: 0.5rem 0;
+}
+
+.footerProductColumn a,
+.footerCompanyColumn a,
+.footerLearnColumn a,
+.footerSocialColumn a {
+  color: var(--text-default);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
 }

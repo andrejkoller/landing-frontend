@@ -1,102 +1,165 @@
+"use client";
 import Image from "next/image";
 import styles from "./Footer.module.css";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export const Footer = () => {
+  const footerLinks = useRef<HTMLAnchorElement[]>([]);
+
+  const addToRefs = (el: HTMLAnchorElement | null) => {
+    if (el && !footerLinks.current.includes(el)) {
+      footerLinks.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    const hoverColors = [
+      "var(--color-presenter)",
+      "var(--color-planning)",
+      "var(--color-charts)",
+      "var(--color-community)",
+    ];
+
+    const currentLinks = [...footerLinks.current];
+    const handlersMap = new Map<
+      HTMLAnchorElement,
+      { enter: () => void; leave: () => void }
+    >();
+
+    currentLinks.forEach((link) => {
+      const handleMouseEnter = () => {
+        const randomColor =
+          hoverColors[Math.floor(Math.random() * hoverColors.length)];
+        link.style.color = randomColor;
+      };
+
+      const handleMouseLeave = () => {
+        link.style.color = "";
+      };
+
+      handlersMap.set(link, {
+        enter: handleMouseEnter,
+        leave: handleMouseLeave,
+      });
+
+      link.addEventListener("mouseenter", handleMouseEnter);
+      link.addEventListener("mouseleave", handleMouseLeave);
+    });
+
+    return () => {
+      currentLinks.forEach((link) => {
+        const handlers = handlersMap.get(link);
+        if (handlers) {
+          link.removeEventListener("mouseenter", handlers.enter);
+          link.removeEventListener("mouseleave", handlers.leave);
+        }
+      });
+    };
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <div className={styles.footerContent}>
-          <div className={styles.wrapper}>
-            <div className={styles.footerLogo}>
+          <div className={styles.footerLogoContainer}>
+            <Link href={"/"} className={styles.footerLogoLink}>
               <Image
-                src="/images/logo.png"
+                src={"/logo.png"}
                 alt="Logo"
-                width={100}
-                height={100}
-                className={styles.logoImage}
+                width={150}
+                height={50}
+                className={styles.footerLogo}
               />
-            </div>
-            <div className={styles.footerUtils}>
-              <div className={styles.footerUtilsItem}>
-                <div className={styles.footerUtilsItemLinks}>
-                  <Link href="/about" className={styles.footerLink}>
-                    About Us
-                  </Link>
-                  <Link href="/contact" className={styles.footerLink}>
-                    Contact
-                  </Link>
-                  <Link href="/privacy" className={styles.footerLink}>
-                    Privacy Policy
-                  </Link>
-                  <Link href="/terms" className={styles.footerLink}>
-                    Terms of Service
-                  </Link>
-                </div>
-              </div>
-              <div className={styles.footerUtilsItem}>
-                <div className={styles.footerUtilsItemTheme}></div>
-                <div className={styles.footerUtilsItemLanguage}></div>
-              </div>
-            </div>
+            </Link>
           </div>
-          <div className={styles.footerColumns}>
-            <div className={styles.footerColumn}>
-              <h3 className={styles.footerColumnTitle}>Products</h3>
-              <ul className={styles.footerColumnList}>
-                <li className={styles.footerColumnItem}>
-                  <Link href="/presenter" className={styles.footerLink}>
+          <div className={styles.footerLinksContainer}>
+            <div className={styles.footerProductColumn}>
+              <h3 className={styles.footerProductTitle}>Products</h3>
+              <ul className={styles.footerProductLinks}>
+                <li className={styles.footerProductLink}>
+                  <Link href={"/presenter"} ref={addToRefs}>
                     Presenter
                   </Link>
                 </li>
-                <li className={styles.footerColumnItem}>
-                  <Link href="/planning" className={styles.footerLink}>
-                    Planning
+                <li className={styles.footerProductLink}>
+                  <Link href={"/content"} ref={addToRefs}>
+                    Content
                   </Link>
                 </li>
-                <li className={styles.footerColumnItem}>
-                  <Link href="/charts" className={styles.footerLink}>
-                    Charts
-                  </Link>
-                </li>
-                <li className={styles.footerColumnItem}>
-                  <Link href="/community" className={styles.footerLink}>
-                    Community
+                <li className={styles.footerProductLink}>
+                  <Link href={"/videoplayer"} ref={addToRefs}>
+                    Video Player
                   </Link>
                 </li>
               </ul>
             </div>
-            <div className={styles.footerColumn}>
-              <h3 className={styles.footerColumnTitle}>Learn</h3>
-              <ul className={styles.footerColumnList}>
-                <li className={styles.footerColumnItem}>
-                  <Link href="/tutorials" className={styles.footerLink}>
+            <div className={styles.footerCompanyColumn}>
+              <h3 className={styles.footerCompanyTitle}>Company</h3>
+              <ul className={styles.footerCompanyLinks}>
+                <li className={styles.footerCompanyLink}>
+                  <Link href={"/about"} ref={addToRefs}>
+                    About Us
+                  </Link>
+                </li>
+                <li className={styles.footerCompanyLink}>
+                  <Link href={"/contact"} ref={addToRefs}>
+                    Get in Touch
+                  </Link>
+                </li>
+                <li className={styles.footerCompanyLink}>
+                  <Link href={"/privacy"} ref={addToRefs}>
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li className={styles.footerCompanyLink}>
+                  <Link href={"/terms"} ref={addToRefs}>
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.footerLearnColumn}>
+              <h3 className={styles.footerLearnTitle}>Learn</h3>
+              <ul className={styles.footerLearnLinks}>
+                <li className={styles.footerLearnLink}>
+                  <Link href={"/blog"} ref={addToRefs}>
                     Tutorials
                   </Link>
                 </li>
-                <li className={styles.footerColumnItem}>
-                  <Link href="/blog" className={styles.footerLink}>
+                <li className={styles.footerLearnLink}>
+                  <Link href={"/docs"} ref={addToRefs}>
                     Blog
                   </Link>
                 </li>
-                <li className={styles.footerColumnItem}>
-                  <Link href="/features" className={styles.footerLink}>
+                <li className={styles.footerLearnLink}>
+                  <Link href={"/faq"} ref={addToRefs}>
                     Features
                   </Link>
                 </li>
               </ul>
             </div>
-            <div className={styles.footerColumn}>
-              <h3 className={styles.footerColumnTitle}>Support</h3>
-              <ul className={styles.footerColumnList}>
-                <li className={styles.footerColumnItem}>
-                  <Link href="/help" className={styles.footerLink}>
-                    Help Center
+            <div className={styles.footerSocialColumn}>
+              <h3 className={styles.footerSocialTitle}>Socials</h3>
+              <ul className={styles.footerSocialLinks}>
+                <li className={styles.footerSocialLink}>
+                  <Link href={"https://linkedin.com"} ref={addToRefs}>
+                    LinkedIn
                   </Link>
                 </li>
-                <li className={styles.footerColumnItem}>
-                  <Link href="/contact-support" className={styles.footerLink}>
-                    Contact Support
+                <li className={styles.footerSocialLink}>
+                  <Link href={"https://instagram.com"} ref={addToRefs}>
+                    Instagram
+                  </Link>
+                </li>
+                <li className={styles.footerSocialLink}>
+                  <Link href={"https://facebook.com"} ref={addToRefs}>
+                    Facebook
+                  </Link>
+                </li>
+                <li className={styles.footerSocialLink}>
+                  <Link href={"https://x.com"} ref={addToRefs}>
+                    X
                   </Link>
                 </li>
               </ul>
