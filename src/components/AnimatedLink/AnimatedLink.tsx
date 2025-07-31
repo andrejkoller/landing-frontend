@@ -12,7 +12,7 @@ export const AnimatedLink = ({
   className?: string;
   hoverType?: "color" | "background";
 }) => {
-  const footerLink = useRef<HTMLAnchorElement>(null);
+  const animatedLink = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const hoverColors = [
@@ -22,7 +22,7 @@ export const AnimatedLink = ({
       "var(--color-community)",
     ];
 
-    const currentLink = footerLink.current;
+    const currentLink = animatedLink.current;
 
     if (currentLink) {
       const handleMouseEnter = () => {
@@ -56,7 +56,7 @@ export const AnimatedLink = ({
   }, [hoverType]);
 
   return (
-    <Link href={href} className={className} ref={footerLink}>
+    <Link href={href} className={className} ref={animatedLink}>
       {children}
     </Link>
   );
