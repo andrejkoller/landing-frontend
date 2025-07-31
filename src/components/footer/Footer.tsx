@@ -2,62 +2,9 @@
 import Image from "next/image";
 import styles from "./Footer.module.css";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { AnimatedLink } from "../AnimatedLink/AnimatedLink";
 
 export const Footer = () => {
-  const footerLinks = useRef<HTMLAnchorElement[]>([]);
-
-  const addToRefs = (el: HTMLAnchorElement | null) => {
-    if (el && !footerLinks.current.includes(el)) {
-      footerLinks.current.push(el);
-    }
-  };
-
-  useEffect(() => {
-    const hoverColors = [
-      "var(--color-presenter)",
-      "var(--color-planning)",
-      "var(--color-charts)",
-      "var(--color-community)",
-    ];
-
-    const currentLinks = [...footerLinks.current];
-    const handlersMap = new Map<
-      HTMLAnchorElement,
-      { enter: () => void; leave: () => void }
-    >();
-
-    currentLinks.forEach((link) => {
-      const handleMouseEnter = () => {
-        const randomColor =
-          hoverColors[Math.floor(Math.random() * hoverColors.length)];
-        link.style.color = randomColor;
-      };
-
-      const handleMouseLeave = () => {
-        link.style.color = "";
-      };
-
-      handlersMap.set(link, {
-        enter: handleMouseEnter,
-        leave: handleMouseLeave,
-      });
-
-      link.addEventListener("mouseenter", handleMouseEnter);
-      link.addEventListener("mouseleave", handleMouseLeave);
-    });
-
-    return () => {
-      currentLinks.forEach((link) => {
-        const handlers = handlersMap.get(link);
-        if (handlers) {
-          link.removeEventListener("mouseenter", handlers.enter);
-          link.removeEventListener("mouseleave", handlers.leave);
-        }
-      });
-    };
-  }, []);
-
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
@@ -78,19 +25,19 @@ export const Footer = () => {
               <h3 className={styles.footerProductTitle}>Products</h3>
               <ul className={styles.footerProductLinks}>
                 <li className={styles.footerProductLink}>
-                  <Link href={"/presenter"} ref={addToRefs}>
+                  <AnimatedLink href={"/presenter"} hoverType={"color"}>
                     Presenter
-                  </Link>
+                  </AnimatedLink>
                 </li>
                 <li className={styles.footerProductLink}>
-                  <Link href={"/content"} ref={addToRefs}>
+                  <AnimatedLink href={"/content"} hoverType={"color"}>
                     Content
-                  </Link>
+                  </AnimatedLink>
                 </li>
                 <li className={styles.footerProductLink}>
-                  <Link href={"/videoplayer"} ref={addToRefs}>
+                  <AnimatedLink href={"/videoplayer"} hoverType={"color"}>
                     Video Player
-                  </Link>
+                  </AnimatedLink>
                 </li>
               </ul>
             </div>
@@ -98,24 +45,24 @@ export const Footer = () => {
               <h3 className={styles.footerCompanyTitle}>Company</h3>
               <ul className={styles.footerCompanyLinks}>
                 <li className={styles.footerCompanyLink}>
-                  <Link href={"/about"} ref={addToRefs}>
+                  <AnimatedLink href={"/about"} hoverType={"color"}>
                     About Us
-                  </Link>
+                  </AnimatedLink>
                 </li>
                 <li className={styles.footerCompanyLink}>
-                  <Link href={"/contact"} ref={addToRefs}>
+                  <AnimatedLink href={"/contact"} hoverType={"color"}>
                     Get in Touch
-                  </Link>
+                  </AnimatedLink>
                 </li>
                 <li className={styles.footerCompanyLink}>
-                  <Link href={"/privacy"} ref={addToRefs}>
+                  <AnimatedLink href={"/privacy"} hoverType={"color"}>
                     Privacy Policy
-                  </Link>
+                  </AnimatedLink>
                 </li>
                 <li className={styles.footerCompanyLink}>
-                  <Link href={"/terms"} ref={addToRefs}>
+                  <AnimatedLink href={"/terms"} hoverType={"color"}>
                     Terms of Service
-                  </Link>
+                  </AnimatedLink>
                 </li>
               </ul>
             </div>
@@ -123,19 +70,19 @@ export const Footer = () => {
               <h3 className={styles.footerLearnTitle}>Learn</h3>
               <ul className={styles.footerLearnLinks}>
                 <li className={styles.footerLearnLink}>
-                  <Link href={"/blog"} ref={addToRefs}>
+                  <AnimatedLink href={"/blog"} hoverType={"color"}>
                     Tutorials
-                  </Link>
+                  </AnimatedLink>
                 </li>
                 <li className={styles.footerLearnLink}>
-                  <Link href={"/docs"} ref={addToRefs}>
+                  <AnimatedLink href={"/docs"} hoverType={"color"}>
                     Blog
-                  </Link>
+                  </AnimatedLink>
                 </li>
                 <li className={styles.footerLearnLink}>
-                  <Link href={"/faq"} ref={addToRefs}>
+                  <AnimatedLink href={"/faq"} hoverType={"color"}>
                     Features
-                  </Link>
+                  </AnimatedLink>
                 </li>
               </ul>
             </div>
@@ -143,24 +90,33 @@ export const Footer = () => {
               <h3 className={styles.footerSocialTitle}>Socials</h3>
               <ul className={styles.footerSocialLinks}>
                 <li className={styles.footerSocialLink}>
-                  <Link href={"https://linkedin.com"} ref={addToRefs}>
+                  <AnimatedLink
+                    href={"https://linkedin.com"}
+                    hoverType={"color"}
+                  >
                     LinkedIn
-                  </Link>
+                  </AnimatedLink>
                 </li>
                 <li className={styles.footerSocialLink}>
-                  <Link href={"https://instagram.com"} ref={addToRefs}>
+                  <AnimatedLink
+                    href={"https://instagram.com"}
+                    hoverType={"color"}
+                  >
                     Instagram
-                  </Link>
+                  </AnimatedLink>
                 </li>
                 <li className={styles.footerSocialLink}>
-                  <Link href={"https://facebook.com"} ref={addToRefs}>
+                  <AnimatedLink
+                    href={"https://facebook.com"}
+                    hoverType={"color"}
+                  >
                     Facebook
-                  </Link>
+                  </AnimatedLink>
                 </li>
                 <li className={styles.footerSocialLink}>
-                  <Link href={"https://x.com"} ref={addToRefs}>
+                  <AnimatedLink href={"https://x.com"} hoverType={"color"}>
                     X
-                  </Link>
+                  </AnimatedLink>
                 </li>
               </ul>
             </div>

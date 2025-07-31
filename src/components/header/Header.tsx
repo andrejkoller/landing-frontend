@@ -5,6 +5,7 @@ import styles from "./Header.module.css";
 import { ButtonBase } from "@mui/material";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { AnimatedLink } from "../AnimatedLink/AnimatedLink";
 
 export const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -68,9 +69,13 @@ export const Header = () => {
           <Link href={"/signin"} className={styles.headerAccountLink}>
             Log In
           </Link>
-          <Link href={"/signup"} className={styles.headerAccountLink}>
+          <AnimatedLink
+            href={"/signup"}
+            className={styles.headerAccountLink}
+            hoverType={"background"}
+          >
             Sign Up
-          </Link>
+          </AnimatedLink>
         </div>
       </div>
       {activeDropdown === "products" && (

@@ -112,6 +112,7 @@
   transform: translateY(-50%) rotate(0);
   transition: transform 0.2s ease-in-out;
   stroke: var(--text-default);
+  stroke-width: 3px;
 }
 
 .navItem:hover .navIcon {
