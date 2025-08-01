@@ -1,27 +1,44 @@
 "use client";
-
 import Link from "next/link";
 import styles from "./Header.module.css";
 import { ButtonBase } from "@mui/material";
 import { ChevronDown } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { AnimatedLink } from "../AnimatedLink/AnimatedLink";
 import { accountService } from "@/services/account/accountService";
 
-export const Header = () => {
+interface HeaderProps {
+  activeDropdown?: string;
+  setActiveDropdown?: (dropdown: string | null) => void;
+}
+
+export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const productsDropdownRef = useRef<HTMLUListElement>(null);
+  const learnDropdownRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     setLoggedIn(accountService.isLoggedIn());
   }, []);
 
+  useEffect(() => {
+    // Animiere die Dropdowns beim Mount/Unmount
+    if (activeDropdown === "products" && productsDropdownRef.current) {
+      const dropdown = productsDropdownRef.current;
+      dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
+    }
+    if (activeDropdown === "learn" && learnDropdownRef.current) {
+      const dropdown = learnDropdownRef.current;
+      dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
+    }
+  }, [activeDropdown]);
+
   const handleMouseEnter = (dropdown: string) => {
-    setActiveDropdown(dropdown);
+    setActiveDropdown?.(dropdown);
   };
 
   const handleMouseLeave = () => {
-    setActiveDropdown(null);
+    setActiveDropdown?.(null);
   };
 
   return (
@@ -94,46 +111,51 @@ export const Header = () => {
         )}
       </div>
       {activeDropdown === "products" && (
-        <ul className={styles.dropdownMenu}>
-          <li className={styles.dropdownItem}>
-            <Link href={"/presenter"} className={styles.dropdownLink}>
-              Presenter
-            </Link>
-          </li>
-          <li className={styles.dropdownItem}>
-            <Link href={"/planning"} className={styles.dropdownLink}>
-              Planning
-            </Link>
-          </li>
-          <li className={styles.dropdownItem}>
-            <Link href={"/music"} className={styles.dropdownLink}>
-              Charts
-            </Link>
-          </li>
-          <li className={styles.dropdownItem}>
-            <Link href={"/community"} className={styles.dropdownLink}>
-              Community
-            </Link>
-          </li>
+        <ul 
+          ref={productsDropdownRef}
+          className={`${styles.dropdownMenu} ${styles.open}`}
+        >
+          <div className={styles.dropdownContent}>
+            <li className={styles.dropdownItem}>
+              <Link href={"/presenter"} className={styles.dropdownLink}>
+                Presenter
+              </Link>
+            </li>
+            <li className={styles.dropdownItem}>
+              <Link href={"/visuals"} className={styles.dropdownLink}>
+                Visuals
+              </Link>
+            </li>
+            <li className={styles.dropdownItem}>
+              <Link href={"/videoplayer"} className={styles.dropdownLink}>
+                Video Player
+              </Link>
+            </li>
+          </div>
         </ul>
       )}
       {activeDropdown === "learn" && (
-        <ul className={styles.dropdownMenu}>
-          <li className={styles.dropdownItem}>
-            <Link href={"/tutorials"} className={styles.dropdownLink}>
-              Tutorials
-            </Link>
-          </li>
-          <li className={styles.dropdownItem}>
-            <Link href={"/blog"} className={styles.dropdownLink}>
-              Blog
-            </Link>
-          </li>
-          <li className={styles.dropdownItem}>
-            <Link href={"/features"} className={styles.dropdownLink}>
-              Features
-            </Link>
-          </li>
+        <ul 
+          ref={learnDropdownRef}
+          className={`${styles.dropdownMenu} ${styles.open}`}
+        >
+          <div className={styles.dropdownContent}>
+            <li className={styles.dropdownItem}>
+              <Link href={"/tutorials"} className={styles.dropdownLink}>
+                Tutorials
+              </Link>
+            </li>
+            <li className={styles.dropdownItem}>
+              <Link href={"/blog"} className={styles.dropdownLink}>
+                Blog
+              </Link>
+            </li>
+            <li className={styles.dropdownItem}>
+              <Link href={"/features"} className={styles.dropdownLink}>
+                Features
+              </Link>
+            </li>
+          </div>
         </ul>
       )}
     </header>
