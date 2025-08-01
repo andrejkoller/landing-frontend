@@ -9,7 +9,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
       const storedTheme = localStorage.getItem("theme");
-      if (storedTheme) {
+      if (storedTheme && (storedTheme === "light" || storedTheme === "dark")) {
         setTheme(storedTheme as "light" | "dark");
         if (typeof document !== "undefined") {
           document.documentElement.setAttribute("data-theme", storedTheme);
@@ -33,33 +33,23 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const setLightTheme = () => {
-    setTheme("light");
+  const setThemeAndPersist = (newTheme: "light" | "dark") => {
+    setTheme(newTheme);
     if (
       typeof window !== "undefined" &&
       typeof localStorage !== "undefined" &&
       typeof document !== "undefined"
     ) {
-      localStorage.setItem("theme", "light");
-      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", newTheme);
+      document.documentElement.setAttribute("data-theme", newTheme);
     } else if (typeof document !== "undefined") {
-      document.documentElement.setAttribute("data-theme", "light");
+      document.documentElement.setAttribute("data-theme", newTheme);
     }
   };
 
-  const setDarkTheme = () => {
-    setTheme("dark");
-    if (
-      typeof window !== "undefined" &&
-      typeof localStorage !== "undefined" &&
-      typeof document !== "undefined"
-    ) {
-      localStorage.setItem("theme", "dark");
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else if (typeof document !== "undefined") {
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-  };
+  const setLightTheme = () => setThemeAndPersist("light");
+
+  const setDarkTheme = () => setThemeAndPersist("dark");
 
   return (
     <ThemeContext.Provider value={{ theme, setLightTheme, setDarkTheme }}>
