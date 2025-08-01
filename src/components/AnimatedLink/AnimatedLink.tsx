@@ -17,9 +17,8 @@ export const AnimatedLink = ({
   useEffect(() => {
     const hoverColors = [
       "var(--color-presenter)",
-      "var(--color-planning)",
-      "var(--color-charts)",
-      "var(--color-community)",
+      "var(--color-visuals)",
+      "var(--color-videoplayer)",
     ];
 
     const currentLink = animatedLink.current;
