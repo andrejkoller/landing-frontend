@@ -19,6 +19,7 @@ export const AnimatedLink = ({
       "var(--color-presenter)",
       "var(--color-visuals)",
       "var(--color-videoplayer)",
+      "var(--color-app)",
     ];
 
     const currentLink = animatedLink.current;

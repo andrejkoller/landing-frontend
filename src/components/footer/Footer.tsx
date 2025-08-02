@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./Footer.module.css";
 import Link from "next/link";
 import { AnimatedLink } from "../AnimatedLink/AnimatedLink";
+import { Language } from "../Language/Language";
 
 export const Footer = () => {
   return (
@@ -120,6 +121,15 @@ export const Footer = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+        <div className={styles.footerBottom}>
+          <p className={styles.footerCopyright}>
+            &copy; {new Date().getFullYear()} Your Company Name. All rights
+            reserved.
+          </p>
+          <div className={styles.footerLanguageSelector}>
+            <Language />
           </div>
         </div>
       </div>

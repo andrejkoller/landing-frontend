@@ -1,4 +1,4 @@
-.accountSection {
+.languagesSection {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-.accountContainer {
+.languagesContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -19,11 +19,18 @@
   width: 100%;
 }
 
-.accountContent {
+.languagesContent {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
+}
+
+.languagesTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }

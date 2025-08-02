@@ -22,7 +22,6 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
   }, []);
 
   useEffect(() => {
-    // Animiere die Dropdowns beim Mount/Unmount
     if (activeDropdown === "products" && productsDropdownRef.current) {
       const dropdown = productsDropdownRef.current;
       dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
@@ -111,7 +110,7 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
         )}
       </div>
       {activeDropdown === "products" && (
-        <ul 
+        <ul
           ref={productsDropdownRef}
           className={`${styles.dropdownMenu} ${styles.open}`}
         >
@@ -135,7 +134,7 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
         </ul>
       )}
       {activeDropdown === "learn" && (
-        <ul 
+        <ul
           ref={learnDropdownRef}
           className={`${styles.dropdownMenu} ${styles.open}`}
         >

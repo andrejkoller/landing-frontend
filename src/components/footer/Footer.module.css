@@ -87,3 +87,24 @@
   font-weight: 500;
   transition: color 0.2s ease-in-out;
 }
+
+.footerBottom {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.footerCopyright {
+  font-size: 0.875rem;
+  color: var(--text-default);
+  margin: 0;
+}
+
+.footerLanguageSelector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
