@@ -4,6 +4,7 @@
   --bg-main: #ffffff;
   --text-default: #000000;
   --border: rgba(0, 0, 0, 0.1);
+  --color-app: #4ab3e5;
   --color-presenter: #ffa861;
   --color-visuals: #4dffa2;
   --color-videoplayer: #b24dff;
@@ -13,6 +14,7 @@
   --bg-main: #ffffff;
   --text-default: #000000;
   --border: rgba(0, 0, 0, 0.1);
+  --color-app: #4ab3e5;
   --color-presenter: #ffa861;
   --color-visuals: #4dffa2;
   --color-videoplayer: #b24dff;
@@ -22,6 +24,7 @@
   --bg-main: #000000;
   --text-default: #ffffff;
   --border: rgba(255, 255, 255, 0.15);
+  --color-app: #4ab3e5;
   --color-presenter: #ffa24d;
   --color-visuals: #4dffa2;
   --color-videoplayer: #b24dff;
