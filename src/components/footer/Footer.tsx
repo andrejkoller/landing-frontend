@@ -1,9 +1,8 @@
 "use client";
-import Image from "next/image";
 import styles from "./Footer.module.css";
 import Link from "next/link";
 import { AnimatedLink } from "../AnimatedLink/AnimatedLink";
-import { Language } from "../Language/Language";
+import { LanguageSelector } from "../LanguageSelector/LanguageSelector";
 
 export const Footer = () => {
   return (
@@ -12,14 +11,11 @@ export const Footer = () => {
         <div className={styles.footerContent}>
           <div className={styles.footerLogoContainer}>
             <Link href={"/"} className={styles.footerLogoLink}>
-              <Image
-                src={"/logo.png"}
-                alt="Logo"
-                width={150}
-                height={50}
-                className={styles.footerLogo}
-              />
+              <h1 className={styles.footerLogoText}>Your Company Name</h1>
             </Link>
+            <p className={styles.footerLogoDescription}>
+              Your company description goes here. Briefly explain what you do.
+            </p>
           </div>
           <div className={styles.footerLinksContainer}>
             <div className={styles.footerProductColumn}>
@@ -31,8 +27,8 @@ export const Footer = () => {
                   </AnimatedLink>
                 </li>
                 <li className={styles.footerProductLink}>
-                  <AnimatedLink href={"/content"} hoverType={"color"}>
-                    Content
+                  <AnimatedLink href={"/visuals"} hoverType={"color"}>
+                    Visuals
                   </AnimatedLink>
                 </li>
                 <li className={styles.footerProductLink}>
@@ -47,12 +43,12 @@ export const Footer = () => {
               <ul className={styles.footerCompanyLinks}>
                 <li className={styles.footerCompanyLink}>
                   <AnimatedLink href={"/about"} hoverType={"color"}>
-                    About Us
+                    About
                   </AnimatedLink>
                 </li>
                 <li className={styles.footerCompanyLink}>
                   <AnimatedLink href={"/contact"} hoverType={"color"}>
-                    Get in Touch
+                    Contact
                   </AnimatedLink>
                 </li>
                 <li className={styles.footerCompanyLink}>
@@ -62,7 +58,7 @@ export const Footer = () => {
                 </li>
                 <li className={styles.footerCompanyLink}>
                   <AnimatedLink href={"/terms"} hoverType={"color"}>
-                    Terms of Service
+                    Terms & Conditions
                   </AnimatedLink>
                 </li>
               </ul>
@@ -71,13 +67,18 @@ export const Footer = () => {
               <h3 className={styles.footerLearnTitle}>Learn</h3>
               <ul className={styles.footerLearnLinks}>
                 <li className={styles.footerLearnLink}>
+                  <AnimatedLink href={"/docs"} hoverType={"color"}>
+                    Blog
+                  </AnimatedLink>
+                </li>
+                <li className={styles.footerLearnLink}>
                   <AnimatedLink href={"/blog"} hoverType={"color"}>
                     Tutorials
                   </AnimatedLink>
                 </li>
                 <li className={styles.footerLearnLink}>
-                  <AnimatedLink href={"/docs"} hoverType={"color"}>
-                    Blog
+                  <AnimatedLink href={"/updates"} hoverType={"color"}>
+                    Updates
                   </AnimatedLink>
                 </li>
                 <li className={styles.footerLearnLink}>
@@ -90,6 +91,11 @@ export const Footer = () => {
             <div className={styles.footerSocialColumn}>
               <h3 className={styles.footerSocialTitle}>Socials</h3>
               <ul className={styles.footerSocialLinks}>
+                <li className={styles.footerSocialLink}>
+                  <AnimatedLink href={"https://x.com"} hoverType={"color"}>
+                    X
+                  </AnimatedLink>
+                </li>
                 <li className={styles.footerSocialLink}>
                   <AnimatedLink
                     href={"https://linkedin.com"}
@@ -114,13 +120,11 @@ export const Footer = () => {
                     Facebook
                   </AnimatedLink>
                 </li>
-                <li className={styles.footerSocialLink}>
-                  <AnimatedLink href={"https://x.com"} hoverType={"color"}>
-                    X
-                  </AnimatedLink>
-                </li>
               </ul>
             </div>
+          </div>
+          <div className={styles.footerLanguageSelector}>
+            <LanguageSelector />
           </div>
         </div>
         <div className={styles.footerBottom}>
@@ -128,9 +132,6 @@ export const Footer = () => {
             &copy; {new Date().getFullYear()} Your Company Name. All rights
             reserved.
           </p>
-          <div className={styles.footerLanguageSelector}>
-            <Language />
-          </div>
         </div>
       </div>
     </footer>
