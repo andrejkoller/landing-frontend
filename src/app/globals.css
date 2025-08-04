@@ -52,6 +52,5 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: calc(100% - 5.5rem);
-  margin-top: 5.5rem;
+  height: 100%;
 }

@@ -21,16 +21,54 @@
 
 .languagesContent {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100%;
   width: 100%;
 }
 
-.languagesTitle {
+.languagesHeader {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
+}
+
+.searchbar {
+  width: 100%;
+}
+
+.topLanguagesList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  width: 100%;
+  border-bottom: 1px solid var(--border-default);
+  margin: 0;
+  padding: 2rem 0;
+  list-style: none;
+}
+
+.otherLanguagesList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 2rem 0;
+  list-style: none;
+}
+
+.languageItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.languageFlag {
+  width: 2rem;
+  height: 1.5rem;
 }

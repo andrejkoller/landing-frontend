@@ -2,13 +2,11 @@
   max-height: 5.5rem;
   min-height: 5.5rem;
   width: 100%;
-  z-index: 999;
-  position: relative;
   transition: min-height 0.3s;
   border-bottom: 1px solid var(--border-default);
-  position: fixed;
-  top: 0;
   background-color: var(--bg-main);
+  position: relative;
+  z-index: 1000;
 }
 
 .headerContainer {
@@ -18,6 +16,8 @@
   height: 5.5rem;
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 .headerContent {
@@ -156,10 +156,10 @@
 .dropdownMenu {
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 998;
-  width: 100vw;
+  left: 0;
+  right: 0;
+  position: relative;
+  z-index: 999;
   padding: 0;
   margin: 0;
   background-color: var(--bg-main);
@@ -169,7 +169,6 @@
   transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
   opacity: 0;
 }
-
 .dropdownMenu.open {
   max-height: 300px;
   opacity: 1;
