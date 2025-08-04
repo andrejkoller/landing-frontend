@@ -4,20 +4,20 @@
   --bg-main: #ffffff;
   --text-default: #000000;
   --border-default: rgba(0, 0, 0, 0.1);
-  --color-app: #4ab3e5;
-  --color-presenter: #ffa861;
-  --color-visuals: #4dffa2;
-  --color-videoplayer: #b24dff;
+  --color-app: #2196f3;
+  --color-presenter: #ff7c2c;
+  --color-visuals: #00cc66;
+  --color-videoplayer: #9933ff;
 }
 
 [data-theme="light"] {
   --bg-main: #ffffff;
   --text-default: #000000;
   --border-default: rgba(0, 0, 0, 0.1);
-  --color-app: #4ab3e5;
-  --color-presenter: #ffa861;
-  --color-visuals: #4dffa2;
-  --color-videoplayer: #b24dff;
+  --color-app: #2196f3;
+  --color-presenter: #ff7c2c;
+  --color-visuals: #00cc66;
+  --color-videoplayer: #9933ff;
 }
 
 [data-theme="dark"] {
@@ -25,10 +25,10 @@
   --text-default: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.6);
   --border-default: rgba(255, 255, 255, 0.15);
-  --color-app: #4ab3e5;
-  --color-presenter: #ffa24d;
-  --color-visuals: #4dffa2;
-  --color-videoplayer: #b24dff;
+  --color-app: #2196f3;
+  --color-presenter: #ff7c2c;
+  --color-visuals: #00cc66;
+  --color-videoplayer: #9933ff;
 }
 
 body {
