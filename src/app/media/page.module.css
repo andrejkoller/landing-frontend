@@ -1,0 +1,29 @@
+.mediaSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-main);
+  color: var(--text-default);
+  height: calc(100vh - 5.5rem);
+  width: 100%;
+}
+
+.mediaContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1440px;
+  height: 100%;
+  width: 100%;
+}
+
+.mediaContent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}

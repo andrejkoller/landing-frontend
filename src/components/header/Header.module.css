@@ -60,6 +60,8 @@
 .navLink {
   padding: 0.5rem 0.75rem;
   line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
 .navLink,

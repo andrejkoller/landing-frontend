@@ -71,7 +71,7 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
                 </ButtonBase>
               </li>
               <li className={styles.navItem}>
-                <Link href={"/presenter"} className={styles.navLink}>
+                <Link href={"/pricing"} className={styles.navLink}>
                   Pricing
                 </Link>
               </li>
