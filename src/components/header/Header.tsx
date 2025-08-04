@@ -140,13 +140,18 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
         >
           <div className={styles.dropdownContent}>
             <li className={styles.dropdownItem}>
+              <Link href={"/blog"} className={styles.dropdownLink}>
+                Blog
+              </Link>
+            </li>
+            <li className={styles.dropdownItem}>
               <Link href={"/tutorials"} className={styles.dropdownLink}>
                 Tutorials
               </Link>
             </li>
             <li className={styles.dropdownItem}>
-              <Link href={"/blog"} className={styles.dropdownLink}>
-                Blog
+              <Link href={"/updates"} className={styles.dropdownLink}>
+                Updates
               </Link>
             </li>
             <li className={styles.dropdownItem}>

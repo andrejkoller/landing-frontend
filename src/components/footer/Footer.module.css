@@ -13,9 +13,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100%;
   width: 100%;
+  max-width: 1440px;
+  padding: 4rem 0;
 }
 
 .footerContent {
@@ -24,36 +26,6 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  max-width: 1440px;
-  padding: 4rem 0;
-}
-
-.footerLogoContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 2rem;
-}
-
-.footerLogoLink {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.footerLogoText {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-default);
-  margin: 0;
-}
-
-.footerLogoDescription {
-  font-size: 1rem;
-  color: var(--text-default);
-  margin-top: 0.5rem;
 }
 
 .footerLinksContainer {
@@ -62,7 +34,7 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .footerProductColumn,
@@ -109,11 +81,51 @@
   transition: color 0.2s ease-in-out;
 }
 
+.footerLogoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid var(--border-default);
+  padding-bottom: 1rem;
+}
+
+.footerLogoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.footerLogoText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-default);
+  margin: 0;
+}
+
 .footerLanguageSelector {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+}
+
+.footerCopyrightContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.footerCopyright {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-default);
+  margin: 0;
 }
 
 .footerBottom {
@@ -122,13 +134,22 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 3.5rem;
-  border-top: 1px solid var(--border-default);
 }
 
-.footerCopyright {
-  font-size: 0.875rem;
+.footerDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.footerDescriptionText {
+  font-size: 1rem;
   font-weight: 500;
   color: var(--text-default);
   margin: 0;
+  line-height: 1.5;
+  padding-top: 1rem;
 }

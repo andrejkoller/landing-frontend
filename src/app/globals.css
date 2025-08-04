@@ -23,6 +23,7 @@
 [data-theme="dark"] {
   --bg-main: #000000;
   --text-default: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
   --border-default: rgba(255, 255, 255, 0.15);
   --color-app: #4ab3e5;
   --color-presenter: #ffa24d;

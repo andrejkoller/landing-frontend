@@ -9,14 +9,6 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <div className={styles.footerContent}>
-          <div className={styles.footerLogoContainer}>
-            <Link href={"/"} className={styles.footerLogoLink}>
-              <h1 className={styles.footerLogoText}>Your Company Name</h1>
-            </Link>
-            <p className={styles.footerLogoDescription}>
-              Your company description goes here. Briefly explain what you do.
-            </p>
-          </div>
           <div className={styles.footerLinksContainer}>
             <div className={styles.footerProductColumn}>
               <h3 className={styles.footerProductTitle}>Products</h3>
@@ -52,12 +44,15 @@ export const Footer = () => {
                   </AnimatedLink>
                 </li>
                 <li className={styles.footerCompanyLink}>
-                  <AnimatedLink href={"/privacy"} hoverType={"color"}>
+                  <AnimatedLink href={"/privacy-policy"} hoverType={"color"}>
                     Privacy Policy
                   </AnimatedLink>
                 </li>
                 <li className={styles.footerCompanyLink}>
-                  <AnimatedLink href={"/terms"} hoverType={"color"}>
+                  <AnimatedLink
+                    href={"/terms-and-conditions"}
+                    hoverType={"color"}
+                  >
                     Terms & Conditions
                   </AnimatedLink>
                 </li>
@@ -67,12 +62,12 @@ export const Footer = () => {
               <h3 className={styles.footerLearnTitle}>Learn</h3>
               <ul className={styles.footerLearnLinks}>
                 <li className={styles.footerLearnLink}>
-                  <AnimatedLink href={"/docs"} hoverType={"color"}>
+                  <AnimatedLink href={"/blog"} hoverType={"color"}>
                     Blog
                   </AnimatedLink>
                 </li>
                 <li className={styles.footerLearnLink}>
-                  <AnimatedLink href={"/blog"} hoverType={"color"}>
+                  <AnimatedLink href={"/tutorials"} hoverType={"color"}>
                     Tutorials
                   </AnimatedLink>
                 </li>
@@ -82,7 +77,7 @@ export const Footer = () => {
                   </AnimatedLink>
                 </li>
                 <li className={styles.footerLearnLink}>
-                  <AnimatedLink href={"/faq"} hoverType={"color"}>
+                  <AnimatedLink href={"/features"} hoverType={"color"}>
                     Features
                   </AnimatedLink>
                 </li>
@@ -123,15 +118,58 @@ export const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className={styles.footerLanguageSelector}>
-            <LanguageSelector />
+          <div className={styles.footerLogoContainer}>
+            <Link href={"/"} className={styles.footerLogoLink}>
+              <h1 className={styles.footerLogoText}>Presenter</h1>
+            </Link>
+            <div className={styles.footerLanguageSelector}>
+              <LanguageSelector />
+            </div>
+          </div>
+          <div className={styles.footerCopyrightContainer}>
+            <p className={styles.footerCopyright}>
+              © {new Date().getFullYear()} Presenter. All rights reserved.
+            </p>
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <p className={styles.footerCopyright}>
-            &copy; {new Date().getFullYear()} Your Company Name. All rights
-            reserved.
-          </p>
+          <div className={styles.footerDescription}>
+            <p className={styles.footerDescriptionText}>
+              ¹ Setup required. Presenter is a modern church presentation
+              software designed to enrich worship services with powerful
+              features and an intuitive user interface.
+            </p>
+            <p className={styles.footerDescriptionText}>
+              ² Presenter is suitable for both small churches and large
+              congregations. The software offers customizable templates, easy
+              media management, and a stable presentation experience.
+            </p>
+            <p className={styles.footerDescriptionText}>
+              ³ The basic version is free to use. Advanced features such as
+              cloud sharing, multi-user access, and livestream integration may
+              require a separate subscription.
+            </p>
+            <p className={styles.footerDescriptionText}>
+              ⁴ Presenter is compatible with major operating systems. A stable
+              internet connection is required for synchronization and sharing
+              features.
+            </p>
+            <p className={styles.footerDescriptionText}>
+              ⁵ All content can be stored locally or managed via Presenter’s
+              cloud services. A free user account is required for cloud
+              functionality.
+            </p>
+            <p className={styles.footerDescriptionText}>
+              ⁶ Regular updates include functional improvements and security
+              enhancements.
+            </p>
+            <p className={styles.footerDescriptionText}>
+              ⁷ For more information, visit: www.presenter-app.io
+            </p>
+            <p className={styles.footerDescriptionText}>
+              ⁸ All images shown are for illustration purposes only.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
