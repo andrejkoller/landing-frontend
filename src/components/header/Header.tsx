@@ -16,6 +16,21 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
   const productsDropdownRef = useRef<HTMLUListElement>(null);
   const learnDropdownRef = useRef<HTMLUListElement>(null);
+  const closeTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (dropdown: string) => {
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current);
+      closeTimeout.current = null;
+    }
+    setActiveDropdown?.(dropdown);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeout.current = setTimeout(() => {
+      setActiveDropdown?.(null);
+    }, 500);
+  };
 
   useEffect(() => {
     setLoggedIn(accountService.isLoggedIn());
@@ -25,20 +40,21 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
     if (activeDropdown === "products" && productsDropdownRef.current) {
       const dropdown = productsDropdownRef.current;
       dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
+    } else if (productsDropdownRef.current) {
+      productsDropdownRef.current.style.maxHeight = "0px";
     }
+
     if (activeDropdown === "learn" && learnDropdownRef.current) {
       const dropdown = learnDropdownRef.current;
       dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
+    } else if (learnDropdownRef.current) {
+      learnDropdownRef.current.style.maxHeight = "0px";
     }
+
+    return () => {
+      if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    };
   }, [activeDropdown]);
-
-  const handleMouseEnter = (dropdown: string) => {
-    setActiveDropdown?.(dropdown);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveDropdown?.(null);
-  };
 
   return (
     <header className={styles.header}>
@@ -113,6 +129,8 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
         <ul
           ref={productsDropdownRef}
           className={`${styles.dropdownMenu} ${styles.open}`}
+          onMouseEnter={() => handleMouseEnter("products")}
+          onMouseLeave={handleMouseLeave}
         >
           <div className={styles.dropdownContent}>
             <li className={styles.dropdownItem}>
@@ -137,6 +155,8 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
         <ul
           ref={learnDropdownRef}
           className={`${styles.dropdownMenu} ${styles.open}`}
+          onMouseEnter={() => handleMouseEnter("learn")}
+          onMouseLeave={handleMouseLeave}
         >
           <div className={styles.dropdownContent}>
             <li className={styles.dropdownItem}>

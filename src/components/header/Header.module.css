@@ -160,7 +160,6 @@
   top: 100%;
   left: 0;
   right: 0;
-  position: relative;
   z-index: 999;
   padding: 0;
   margin: 0;
@@ -168,11 +167,11 @@
   border-top: 1px solid var(--border-default);
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s;
   opacity: 0;
 }
+
 .dropdownMenu.open {
-  max-height: 300px;
   opacity: 1;
 }
 
