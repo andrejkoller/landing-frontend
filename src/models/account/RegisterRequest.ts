@@ -1,4 +1,4 @@
-export interface AccountCreateDto {
+export interface RegisterRequest {
   firstName: string;
   lastName: string;
   email: string;
