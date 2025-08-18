@@ -27,3 +27,47 @@
   height: 100%;
   width: 100%;
 }
+
+.settingsHeaderNav {
+  display: flex;
+  width: 100%;
+}
+
+.settingsHeaderList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+.settingsHeaderItem {
+  border-radius: 1.5625rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.settingsHeaderItem:hover {
+  border-color: var(--border-default);
+}
+
+.settingsHeaderItemActive {
+  border-color: var(--border-default);
+}
+
+.settingsHeaderLink {
+  padding: 0.5rem 0.75rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-default);
+  font-family: var(--font-inter), Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+}

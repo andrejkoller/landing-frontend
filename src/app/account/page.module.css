@@ -1,14 +1,3 @@
-.accountSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bg-main);
-  color: var(--text-default);
-  height: calc(100vh - 6rem);
-  width: 100%;
-}
-
 .accountContainer {
   display: flex;
   flex-direction: column;

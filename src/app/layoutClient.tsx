@@ -14,7 +14,7 @@ export default function LayoutClient({
 }>) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const showHeaderFooter = pathname !== "/account";
+  const showHeaderFooter = !pathname.startsWith("/account");
 
   return (
     <ThemeProvider>

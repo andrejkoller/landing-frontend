@@ -10,7 +10,7 @@ export const AnimatedLink = ({
   href: string;
   children: React.ReactNode;
   className?: string;
-  hoverType?: "color" | "background";
+  hoverType?: "color" | "background" | "border";
 }) => {
   const animatedLink = useRef<HTMLAnchorElement>(null);
 
@@ -32,6 +32,9 @@ export const AnimatedLink = ({
         if (hoverType === "background") {
           currentLink.style.backgroundColor = randomColor;
           currentLink.style.color = "var(--bg-main)";
+        } else if (hoverType === "border") {
+          currentLink.style.borderColor = randomColor;
+          currentLink.style.color = "var(--text-default)";
         } else {
           currentLink.style.color = randomColor;
         }
@@ -40,6 +43,8 @@ export const AnimatedLink = ({
       const handleMouseLeave = () => {
         if (hoverType === "background") {
           currentLink.style.backgroundColor = "";
+        } else if (hoverType === "border") {
+          currentLink.style.borderColor = "";
         } else {
           currentLink.style.color = "";
         }
