@@ -14,13 +14,9 @@
   flex-direction: column;
 }
 
-.userSettings {
-  margin-bottom: 16px;
-}
-
 .sidebarHeading {
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -42,8 +38,17 @@
   text-decoration: none;
 }
 
-.products {
-  margin-bottom: 16px;
+.divider {
+  border-top: 1px solid var(--border-default);
+  position: relative;
+  height: 1px;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.logout {
+  color: var(--color-red) !important;
+  text-decoration: none;
 }
 
 @media (max-width: 1024px) {

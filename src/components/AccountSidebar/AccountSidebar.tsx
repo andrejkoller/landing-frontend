@@ -12,6 +12,23 @@ export const AccountSidebar = () => {
               <AnimatedLink href={"/account"}>My Account</AnimatedLink>
             </li>
             <li className={styles.sidebarItem}>
+              <AnimatedLink href={"/security"}>Security</AnimatedLink>
+            </li>
+            <li className={styles.sidebarItem}>
+              <AnimatedLink href={"/devices"}>Devices</AnimatedLink>
+            </li>
+            <li className={styles.sidebarItem}>
+              <AnimatedLink href={"/connections"}>Connections</AnimatedLink>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.billing}>
+          <h2 className={styles.sidebarHeading}>Payment Settings</h2>
+          <ul className={styles.sidebarLinks}>
+            <li className={styles.sidebarItem}>
+              <AnimatedLink href={"/subscriptions"}>Subscriptions</AnimatedLink>
+            </li>
+            <li className={styles.sidebarItem}>
               <AnimatedLink href={"/billing"}>Billing</AnimatedLink>
             </li>
           </ul>
@@ -27,6 +44,16 @@ export const AccountSidebar = () => {
             </li>
             <li className={styles.sidebarItem}>
               <AnimatedLink href={"/videoplayer"}>Video Player</AnimatedLink>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.divider}></div>
+        <div className={styles.accountOptions}>
+          <ul className={styles.sidebarLinks}>
+            <li className={styles.sidebarItem}>
+              <AnimatedLink href={"/logout"} className={styles.logout}>
+                Logout
+              </AnimatedLink>
             </li>
           </ul>
         </div>

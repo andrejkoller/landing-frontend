@@ -10,6 +10,12 @@
   justify-content: center;
 }
 
+.accountFormHeading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
 .accountForm {
   display: flex;
   flex-direction: column;
@@ -86,8 +92,8 @@
   border: 0.225rem solid var(--text-default);
   border-radius: 2rem;
   width: 100%;
-  max-width: 320px;
-  min-width: 200px;
+  max-width: 200px;
+  min-width: 160px;
   font-size: 1.125rem;
   line-height: 1.5rem;
   transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
@@ -105,8 +111,8 @@
   border: 0.225rem solid var(--text-default);
   border-radius: 2rem;
   width: 100%;
-  max-width: 320px;
-  min-width: 200px;
+  max-width: 200px;
+  min-width: 160px;
   font-size: 1.125rem;
   line-height: 1.5rem;
   transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
@@ -118,4 +124,17 @@
 
 .accountButton:hover {
   transform: scale(1.05);
+}
+
+.chevronIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 3px;
+  margin-right: 0.5rem;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease-in-out;
+}
+
+.chevronIconOpen {
+  transform: rotate(180deg);
 }

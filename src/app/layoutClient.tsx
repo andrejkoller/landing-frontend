@@ -21,6 +21,9 @@ export default function LayoutClient({
       <main className="mainContent">{children}</main>
       <Footer />
       <Backdrop
+        sx={{
+          zIndex: 999,
+        }}
         open={activeDropdown !== null}
         onClick={() => setActiveDropdown(null)}
       />

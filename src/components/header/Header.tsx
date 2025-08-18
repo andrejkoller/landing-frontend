@@ -134,19 +134,22 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
         >
           <div className={styles.dropdownContent}>
             <li className={styles.dropdownItem}>
-              <Link href={"/presenter"} className={styles.dropdownLink}>
+              <AnimatedLink href={"/presenter"} className={styles.dropdownLink}>
                 Presenter
-              </Link>
+              </AnimatedLink>
             </li>
             <li className={styles.dropdownItem}>
-              <Link href={"/visuals"} className={styles.dropdownLink}>
+              <AnimatedLink href={"/visuals"} className={styles.dropdownLink}>
                 Visuals
-              </Link>
+              </AnimatedLink>
             </li>
             <li className={styles.dropdownItem}>
-              <Link href={"/videoplayer"} className={styles.dropdownLink}>
+              <AnimatedLink
+                href={"/videoplayer"}
+                className={styles.dropdownLink}
+              >
                 Video Player
-              </Link>
+              </AnimatedLink>
             </li>
           </div>
         </ul>
@@ -160,24 +163,24 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
         >
           <div className={styles.dropdownContent}>
             <li className={styles.dropdownItem}>
-              <Link href={"/blog"} className={styles.dropdownLink}>
+              <AnimatedLink href={"/blog"} className={styles.dropdownLink}>
                 Blog
-              </Link>
+              </AnimatedLink>
             </li>
             <li className={styles.dropdownItem}>
-              <Link href={"/tutorials"} className={styles.dropdownLink}>
+              <AnimatedLink href={"/tutorials"} className={styles.dropdownLink}>
                 Tutorials
-              </Link>
+              </AnimatedLink>
             </li>
             <li className={styles.dropdownItem}>
-              <Link href={"/updates"} className={styles.dropdownLink}>
+              <AnimatedLink href={"/updates"} className={styles.dropdownLink}>
                 Updates
-              </Link>
+              </AnimatedLink>
             </li>
             <li className={styles.dropdownItem}>
-              <Link href={"/features"} className={styles.dropdownLink}>
+              <AnimatedLink href={"/features"} className={styles.dropdownLink}>
                 Features
-              </Link>
+              </AnimatedLink>
             </li>
           </div>
         </ul>
