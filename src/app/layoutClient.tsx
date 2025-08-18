@@ -5,6 +5,7 @@ import "@/app/globals.css";
 import { ThemeProvider } from "@/contexts/theme/ThemeProvider";
 import { useState } from "react";
 import { Backdrop } from "@mui/material";
+import { usePathname } from "next/navigation";
 
 export default function LayoutClient({
   children,
@@ -12,14 +13,19 @@ export default function LayoutClient({
   children: React.ReactNode;
 }>) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
+  const showHeaderFooter = pathname !== "/account";
+
   return (
     <ThemeProvider>
-      <Header
-        activeDropdown={activeDropdown !== null ? activeDropdown : undefined}
-        setActiveDropdown={setActiveDropdown}
-      />
+      {showHeaderFooter && (
+        <Header
+          activeDropdown={activeDropdown !== null ? activeDropdown : undefined}
+          setActiveDropdown={setActiveDropdown}
+        />
+      )}
       <main className="mainContent">{children}</main>
-      <Footer />
+      {showHeaderFooter && <Footer />}
       <Backdrop
         sx={{
           zIndex: 999,

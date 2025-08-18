@@ -1,0 +1,64 @@
+.accountHeader {
+  max-height: 6rem;
+  min-height: 6rem;
+  width: 100%;
+  transition: min-height 0.3s;
+  border-bottom: 1px solid var(--border-default);
+  background-color: var(--bg-main);
+  position: relative;
+  z-index: 1000;
+}
+
+.accountHeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.accountHeaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.accountHeaderNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.accountHeaderList {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.accountHeaderActions button,
+.accountHeaderItem a {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  min-height: 3rem;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.accountHeaderActions {
+  display: flex;
+  align-items: center;
+}

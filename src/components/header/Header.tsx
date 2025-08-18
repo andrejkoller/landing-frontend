@@ -3,9 +3,8 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 import { ButtonBase } from "@mui/material";
 import { ChevronDown } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { AnimatedLink } from "../AnimatedLink/AnimatedLink";
-import { accountService } from "@/services/account/accountService";
 
 interface HeaderProps {
   activeDropdown?: string;
@@ -13,7 +12,6 @@ interface HeaderProps {
 }
 
 export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
-  const [loggedIn, setLoggedIn] = useState<boolean>(false);
   const productsDropdownRef = useRef<HTMLUListElement>(null);
   const learnDropdownRef = useRef<HTMLUListElement>(null);
   const closeTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -31,10 +29,6 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
       setActiveDropdown?.(null);
     }, 500);
   };
-
-  useEffect(() => {
-    setLoggedIn(accountService.isLoggedIn());
-  }, []);
 
   useEffect(() => {
     if (activeDropdown === "products" && productsDropdownRef.current) {
@@ -104,33 +98,18 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
             </ul>
           </nav>
         </div>
-        {loggedIn ? (
-          <div className={styles.headerAccountLinksContainer}>
-            <div className={styles.headerAccountLinksContainer}>
-              <Link href={"/account"} className={styles.headerAccountLink}>
-                Account
-              </Link>
-            </div>
-            <div className={styles.headerAccountLinksContainer}>
-              <Link href={"/logout"} className={styles.headerAccountLink}>
-                Log Out
-              </Link>
-            </div>
-          </div>
-        ) : (
-          <div className={styles.headerAccountLinksContainer}>
-            <Link href={"/signin"} className={styles.headerAccountLink}>
-              Log In
-            </Link>
-            <AnimatedLink
-              href={"/signup"}
-              className={styles.headerAccountLink}
-              hoverType={"background"}
-            >
-              Sign Up
-            </AnimatedLink>
-          </div>
-        )}
+        <div className={styles.headerAccountLinksContainer}>
+          <Link href={"/signin"} className={styles.headerAccountLink}>
+            Log In
+          </Link>
+          <AnimatedLink
+            href={"/signup"}
+            className={styles.headerAccountLink}
+            hoverType={"background"}
+          >
+            Sign Up
+          </AnimatedLink>
+        </div>
       </div>
       {activeDropdown === "products" && (
         <ul
