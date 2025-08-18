@@ -106,9 +106,16 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
         </div>
         {loggedIn ? (
           <div className={styles.headerAccountLinksContainer}>
-            <Link href={"/account"} className={styles.headerAccountLink}>
-              Account
-            </Link>
+            <div className={styles.headerAccountLinksContainer}>
+              <Link href={"/account"} className={styles.headerAccountLink}>
+                Account
+              </Link>
+            </div>
+            <div className={styles.headerAccountLinksContainer}>
+              <Link href={"/logout"} className={styles.headerAccountLink}>
+                Log Out
+              </Link>
+            </div>
           </div>
         ) : (
           <div className={styles.headerAccountLinksContainer}>

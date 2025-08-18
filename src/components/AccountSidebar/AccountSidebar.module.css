@@ -38,19 +38,6 @@
   text-decoration: none;
 }
 
-.divider {
-  border-top: 1px solid var(--border-default);
-  position: relative;
-  height: 1px;
-  text-align: center;
-  font-size: 0.875rem;
-}
-
-.logout {
-  color: var(--color-red) !important;
-  text-decoration: none;
-}
-
 @media (max-width: 1024px) {
   .accountSidebarContainer {
     width: 260px;

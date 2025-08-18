@@ -47,16 +47,6 @@ export const AccountSidebar = () => {
             </li>
           </ul>
         </div>
-        <div className={styles.divider}></div>
-        <div className={styles.accountOptions}>
-          <ul className={styles.sidebarLinks}>
-            <li className={styles.sidebarItem}>
-              <AnimatedLink href={"/logout"} className={styles.logout}>
-                Logout
-              </AnimatedLink>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   );
