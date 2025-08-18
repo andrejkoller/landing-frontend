@@ -25,6 +25,18 @@
 }
 
 [data-theme="dark"] {
+  --bg-main: #121212;
+  --text-default: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --border-default: rgba(255, 255, 255, 0.15);
+  --color-app: #2196f3;
+  --color-presenter: #ff7c2c;
+  --color-visuals: #00cc66;
+  --color-videoplayer: #9933ff;
+  --color-red: #f32121;
+}
+
+[data-theme="black"] {
   --bg-main: #000000;
   --text-default: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.6);

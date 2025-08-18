@@ -29,6 +29,7 @@ export const AnimatedCheckbox = ({
     <Checkbox
       sx={{
         "&.MuiCheckbox-root": {
+          color: "var(--text-default)",
           "&:hover": {
             backgroundColor: "transparent",
           },

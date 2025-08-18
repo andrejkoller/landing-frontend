@@ -4,13 +4,18 @@ import type { ReactNode } from "react";
 import { ThemeContext } from "./ThemeContext";
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark" | "black">("light");
 
   useEffect(() => {
     if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
       const storedTheme = localStorage.getItem("theme");
-      if (storedTheme && (storedTheme === "light" || storedTheme === "dark")) {
-        setTheme(storedTheme as "light" | "dark");
+      if (
+        storedTheme &&
+        (storedTheme === "light" ||
+          storedTheme === "dark" ||
+          storedTheme === "black")
+      ) {
+        setTheme(storedTheme as "light" | "dark" | "black");
         if (typeof document !== "undefined") {
           document.documentElement.setAttribute("data-theme", storedTheme);
         }
@@ -18,7 +23,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       }
     }
 
-    let initialTheme: "light" | "dark" = "light";
+    let initialTheme: "light" | "dark" | "black" = "light";
     if (typeof window !== "undefined" && window.matchMedia) {
       const prefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)"
@@ -33,7 +38,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const setThemeAndPersist = (newTheme: "light" | "dark") => {
+  const setThemeAndPersist = (newTheme: "light" | "dark" | "black") => {
     setTheme(newTheme);
     if (
       typeof window !== "undefined" &&
@@ -51,8 +56,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   const setDarkTheme = () => setThemeAndPersist("dark");
 
+  const setBlackTheme = () => setThemeAndPersist("black");
+
   return (
-    <ThemeContext.Provider value={{ theme, setLightTheme, setDarkTheme }}>
+    <ThemeContext.Provider
+      value={{ theme, setLightTheme, setDarkTheme, setBlackTheme }}
+    >
       {children}
     </ThemeContext.Provider>
   );

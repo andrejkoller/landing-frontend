@@ -1,4 +1,7 @@
 export const inputLabelSx = {
+  "& .MuiSelect-select": {
+    color: "var(--text-default)",
+  },
   "& .MuiInputLabel-root": {
     color: "var(--text-default)",
   },

@@ -125,16 +125,3 @@
 .accountButton:hover {
   transform: scale(1.05);
 }
-
-.chevronIcon {
-  width: 1.5rem;
-  height: 1.5rem;
-  stroke-width: 3px;
-  margin-right: 0.5rem;
-  color: var(--text-secondary);
-  transition: transform 0.2s ease-in-out;
-}
-
-.chevronIconOpen {
-  transform: rotate(180deg);
-}

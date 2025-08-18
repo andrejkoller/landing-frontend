@@ -1,0 +1,12 @@
+.chevronIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 3px;
+  margin-right: 0.5rem;
+  color: var(--text-default);
+  transition: transform 0.2s ease-in-out;
+}
+
+.chevronIconOpen {
+  transform: rotate(180deg);
+}

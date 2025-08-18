@@ -1,23 +1,12 @@
-import {
-  FormControl,
-  FormControlLabel,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
+import { FormControl, FormControlLabel, TextField } from "@mui/material";
 import styles from "./AccountForm.module.css";
 import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
 import { textFieldSx } from "@/utils/textFieldSx";
-import { selectSx } from "@/utils/selectSx";
-import { ChevronDownIcon } from "lucide-react";
-import { useState } from "react";
-import { formControlSx } from "@/utils/formControlSx";
 import { AnimatedCheckbox } from "../AnimatedCheckbox/AnimatedCheckbox";
+import { ThemeSelect } from "../ThemeSelect/ThemeSelect";
+import { LanguageSelect } from "../LanguageSelect/LanguageSelect";
 
 export const AccountForm = () => {
-  const [isSelectOpen, setIsSelectOpen] = useState(false);
-
   return (
     <div className={styles.accountFormContainer}>
       <div className={styles.accountFormContent}>
@@ -65,34 +54,10 @@ export const AccountForm = () => {
             </div>
           </div>
           <div className={styles.accountField}>
-            <FormControl sx={formControlSx} fullWidth>
-              <InputLabel id="language-select-label">Language</InputLabel>
-              <Select
-                sx={selectSx}
-                MenuProps={{
-                  PaperProps: { elevation: 2 },
-                }}
-                open={isSelectOpen}
-                onOpen={() => setIsSelectOpen(true)}
-                onClose={() => setIsSelectOpen(false)}
-                label="Language"
-                labelId="language-select-label"
-                id="language-select"
-                variant="outlined"
-                IconComponent={() => {
-                  return (
-                    <ChevronDownIcon
-                      className={`${styles.chevronIcon} ${
-                        isSelectOpen ? styles.chevronIconOpen : ""
-                      }`}
-                    />
-                  );
-                }}
-              >
-                <MenuItem value="en">English</MenuItem>
-                <MenuItem value="de">Deutsch</MenuItem>
-              </Select>
-            </FormControl>
+            <ThemeSelect />
+          </div>
+          <div className={styles.accountField}>
+            <LanguageSelect />
           </div>
           <div className={styles.accountField}>
             <FormControlLabel
