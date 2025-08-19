@@ -25,6 +25,7 @@
 
 [data-theme="light"] {
   --bg-main: #ffffff;
+  --bg-secondary: #f2f9ff;
   --text-default: #000000;
   --text-secondary: rgba(0, 0, 0, 0.6);
   --border-default: rgba(0, 0, 0, 0.1);
@@ -33,10 +34,12 @@
   --color-visuals: #00cc66;
   --color-videoplayer: #9933ff;
   --color-red: #f32121;
+  --shadow: 0 0 8px rgba(0, 0, 0, 0.04), 0 2px 18px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
   --bg-main: #121212;
+  --bg-secondary: #1e1e1e;
   --text-default: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.6);
   --border-default: rgba(255, 255, 255, 0.15);
@@ -45,10 +48,13 @@
   --color-visuals: #00cc66;
   --color-videoplayer: #9933ff;
   --color-red: #f32121;
+  --shadow: 0 0 8px rgba(255, 255, 255, 0.04),
+    0 2px 18px rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="black"] {
   --bg-main: #000000;
+  --bg-secondary: #1e1e1e;
   --text-default: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.6);
   --border-default: rgba(255, 255, 255, 0.15);
@@ -57,10 +63,13 @@
   --color-visuals: #00cc66;
   --color-videoplayer: #9933ff;
   --color-red: #f32121;
+  --shadow: 0 0 8px rgba(255, 255, 255, 0.04),
+    0 2px 18px rgba(255, 255, 255, 0.1);
 }
 
 :root:not([data-theme]) {
   --bg-main: #ffffff;
+  --bg-secondary: #f2f9ff;
   --text-default: #000000;
   --text-secondary: rgba(0, 0, 0, 0.6);
   --border-default: rgba(0, 0, 0, 0.1);
@@ -69,6 +78,7 @@
   --color-visuals: #00cc66;
   --color-videoplayer: #9933ff;
   --color-red: #f32121;
+  --shadow: 0 0 8px rgba(0, 0, 0, 0.04), 0 2px 18px rgba(0, 0, 0, 0.1);
 }
 
 body {

@@ -1,0 +1,34 @@
+.accountOptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.accountOptionsHeading {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-600);
+  margin-bottom: 16px;
+}
+
+.accountFields {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accountFieldGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  background-color: var(--bg-main);
+  padding: 1rem;
+  border-radius: 0.125rem;
+}
+
+.accountField {
+  width: 100%;
+}

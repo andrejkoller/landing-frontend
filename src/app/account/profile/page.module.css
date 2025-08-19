@@ -1,0 +1,18 @@
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: var(--header-max-width);
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
