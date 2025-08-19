@@ -29,37 +29,13 @@
   width: 100%;
 }
 
-.accountHeaderNav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
+.accountHeaderLogo {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-700);
+  color: var(--text-primary);
 }
 
-.accountHeaderList {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.accountHeaderActions button,
-.accountHeaderItem a {
-  align-items: center;
-  display: flex;
-  cursor: pointer;
-  margin-left: 0.5rem;
-  min-height: 3rem;
-  padding: 0 1rem;
-  text-align: center;
-  text-decoration: none;
+.accountHeaderLogo a {
   color: inherit;
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-500);
-  font-family: var(--font-inter), sans-serif;
-}
-
-.accountHeaderActions {
-  display: flex;
-  align-items: center;
+  text-decoration: none;
 }

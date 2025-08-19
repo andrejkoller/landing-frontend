@@ -4,6 +4,10 @@
   --header-height: 5.5rem;
   --header-max-width: 1440px;
 
+  --profile-picture-size: 2.75rem;
+
+  --border-radius-full: 9999px;
+
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;
   --font-size-lg: 1.125rem;

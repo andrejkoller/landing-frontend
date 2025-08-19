@@ -1,64 +1,18 @@
-import { ButtonBase } from "@mui/material";
 import styles from "./AccountHeader.module.css";
+import { AccountProfileImage } from "../AccountProfileImage/AccountProfileImage";
 import Link from "next/link";
 
-interface NavItem {
-  href: string;
-  label: string;
-  isActive?: boolean;
-}
-
-interface HeaderAction {
-  label: string;
-  onClick?: () => void;
-  href?: string;
-}
-
-interface AccountHeaderProps {
-  navItems?: NavItem[];
-  actions?: HeaderAction[];
-}
-
-export const AccountHeader = ({
-  navItems = [
-    { href: "/account", label: "Home" },
-    { href: "/account/profile", label: "Settings" },
-  ],
-  actions,
-}: AccountHeaderProps) => {
-  const headerActions = actions ?? [{ label: "Logout" }];
-
+export const AccountHeader = () => {
   return (
     <header className={styles.accountHeader}>
       <div className={styles.accountHeaderContainer}>
         <div className={styles.accountHeaderContent}>
-          <nav className={styles.accountHeaderNav}>
-            <ul className={styles.accountHeaderList}>
-              {navItems.map((item) => (
-                <li
-                  key={item.href}
-                  className={`${styles.accountHeaderItem} ${
-                    item.isActive ? styles.accountHeaderItemActive : ""
-                  }`}
-                >
-                  <Link href={item.href}>{item.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className={styles.accountHeaderActions}>
-            {headerActions.map((action, index) =>
-              action.href ? (
-                <Link key={index} href={action.href}>
-                  <ButtonBase>{action.label}</ButtonBase>
-                </Link>
-              ) : (
-                <ButtonBase key={index} onClick={action.onClick}>
-                  {action.label}
-                </ButtonBase>
-              )
-            )}
-          </div>
+          <h1 className={styles.accountHeaderLogo}>
+            <Link href={"/account"}>Presenter</Link>
+          </h1>
+        </div>
+        <div className={styles.accountHeaderProfile}>
+          <AccountProfileImage />
         </div>
       </div>
     </header>

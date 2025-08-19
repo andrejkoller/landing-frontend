@@ -1,0 +1,24 @@
+.accountProfileImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--profile-picture-size);
+  width: var(--profile-picture-size);
+  border: 1px solid var(--border-default);
+  border-radius: var(--border-radius-full);
+  background-color: var(--bg-main);
+}
+
+.accountProfileButton {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-600);
+  border-radius: var(--border-radius-full);
+  color: var(--bg-main) !important;
+  height: 100%;
+  width: 100%;
+}
+
+.accountProfileButton a {
+  color: inherit;
+  text-decoration: none;
+}
