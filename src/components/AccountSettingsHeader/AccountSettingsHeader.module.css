@@ -3,7 +3,6 @@
   min-height: 5.5rem;
   width: 100%;
   transition: min-height 0.3s;
-  border-bottom: 1px solid var(--border-default);
   background-color: var(--bg-main);
   position: relative;
   z-index: 999;
@@ -46,7 +45,7 @@
 
 .settingsHeaderItem {
   border-radius: 1.5625rem;
-  border: 1px solid transparent;
+  border: 0.125rem solid transparent;
   cursor: pointer;
 }
 

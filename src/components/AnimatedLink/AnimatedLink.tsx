@@ -34,7 +34,7 @@ export const AnimatedLink = ({
           currentLink.style.color = "var(--bg-main)";
         } else if (hoverType === "border") {
           currentLink.style.borderColor = randomColor;
-          currentLink.style.color = "var(--text-default)";
+          currentLink.style.color = "var(--border-default)";
         } else {
           currentLink.style.color = randomColor;
         }
