@@ -109,13 +109,6 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
             <Link href={"/account"} className={styles.headerAccountLink}>
               Account
             </Link>
-            <AnimatedLink
-              href={"/logout"}
-              hoverType={"background"}
-              className={styles.headerAccountLink}
-            >
-              Log Out
-            </AnimatedLink>
           </div>
         ) : (
           <div className={styles.headerAccountLinksContainer}>

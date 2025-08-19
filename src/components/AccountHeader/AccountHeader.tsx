@@ -22,7 +22,7 @@ interface AccountHeaderProps {
 export const AccountHeader = ({
   navItems = [
     { href: "/account", label: "Home" },
-    { href: "/account/profile", label: "Profile" },
+    { href: "/account/profile", label: "Settings" },
   ],
   actions,
 }: AccountHeaderProps) => {

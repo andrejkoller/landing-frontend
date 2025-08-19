@@ -54,12 +54,12 @@
 
 .navButton {
   padding: 0.5rem 2rem 0.5rem 0.75rem !important;
-  line-height: 1.6;
+  line-height: var(--line-height-base);
 }
 
 .navLink {
   padding: 0.5rem 0.75rem;
-  line-height: 1.6;
+  line-height: var(--line-height-base);
   position: relative;
   z-index: 1;
 }
@@ -71,8 +71,8 @@
   text-decoration: none;
   color: var(--text-default);
   font-family: var(--font-inter), Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 1.125rem;
+  font-weight: var(--font-weight-500);
+  font-size: var(--font-size-lg);
 }
 
 .navItem::before,
@@ -137,12 +137,12 @@
   border-radius: 2rem;
   max-height: 3rem;
   min-width: 6rem;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-base);
   transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
   text-decoration: none;
   color: var(--text-default);
-  font-weight: 600;
+  font-weight: var(--font-weight-500);
   margin-left: 9px;
 }
 
@@ -191,6 +191,6 @@
   text-decoration: none;
   color: var(--text-default);
   font-family: var(--font-inter), Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 1.125rem;
+  font-weight: var(--font-weight-500);
+  font-size: var(--font-size-lg);
 }

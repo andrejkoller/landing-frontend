@@ -54,8 +54,8 @@
   text-align: center;
   text-decoration: none;
   color: inherit;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-500);
   font-family: var(--font-inter), sans-serif;
 }
 

@@ -59,7 +59,7 @@
 
 .settingsHeaderLink {
   padding: 0.5rem 0.75rem;
-  line-height: 1.6;
+  line-height: var(--line-height-base);
   position: relative;
   z-index: 1;
   display: flex;
@@ -67,6 +67,6 @@
   text-decoration: none;
   color: var(--text-default);
   font-family: var(--font-inter), Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 1.125rem;
+  font-weight: var(--font-weight-500);
+  font-size: var(--font-size-lg);
 }

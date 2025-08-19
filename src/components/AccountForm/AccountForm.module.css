@@ -11,8 +11,8 @@
 }
 
 .accountFormHeading {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-500);
   margin-bottom: 16px;
 }
 
@@ -56,11 +56,11 @@
   border: 0.225rem solid var(--text-default);
   border-radius: 2rem;
   min-width: 100%;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-base);
   transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
   color: var(--bg-main) !important;
-  font-weight: 600;
+  font-weight: var(--font-weight-500);
   background-color: var(--text-default);
   cursor: pointer;
 }
@@ -76,7 +76,7 @@
   margin-bottom: 32px;
   height: 1px;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
 }
 
 .dividerText {
@@ -94,12 +94,12 @@
   width: 100%;
   max-width: 200px;
   min-width: 160px;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-base);
   transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
   text-decoration: none;
   color: var(--text-default);
-  font-weight: 600;
+  font-weight: var(--font-weight-500);
   background-color: var(--bg-main);
   cursor: pointer;
   box-sizing: border-box;
@@ -113,11 +113,11 @@
   width: 100%;
   max-width: 200px;
   min-width: 160px;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-base);
   transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
   color: var(--bg-main) !important;
-  font-weight: 600;
+  font-weight: var(--font-weight-500);
   background-color: var(--text-default);
   cursor: pointer;
 }
