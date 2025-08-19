@@ -5,7 +5,7 @@
   justify-content: center;
   background-color: var(--bg-main);
   color: var(--text-default);
-  height: calc(100vh - 5.5rem);
+  height: calc(100vh - var(--header-height));
   width: 100%;
 }
 
@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  max-width: 1440px;
+  max-width: var(--header-max-width);
   height: 100%;
   width: 100%;
 }

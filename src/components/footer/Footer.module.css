@@ -16,7 +16,7 @@
   justify-content: flex-start;
   height: 100%;
   width: 100%;
-  max-width: 1440px;
+  max-width: var(--header-max-width);
   padding: 4rem 0;
 }
 

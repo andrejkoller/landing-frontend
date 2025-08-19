@@ -1,6 +1,6 @@
 .header {
-  max-height: 5.5rem;
-  min-height: 5.5rem;
+  max-height: var(--header-height);
+  min-height: var(--header-height);
   width: 100%;
   transition: min-height 0.3s;
   border-bottom: 1px solid var(--border-default);
@@ -13,8 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 5.5rem;
-  max-width: 1440px;
+  height: var(--header-height);
+  max-width: var(--header-max-width);
   margin: 0 auto;
   position: relative;
   z-index: 10;
@@ -101,7 +101,7 @@
 }
 
 .navButton:hover {
-  color: var(--text-primary);
+  color: var(--text-default);
   z-index: 1;
 }
 
@@ -177,7 +177,7 @@
 
 .dropdownContent {
   display: flex;
-  max-width: 1440px;
+  max-width: var(--header-max-width);
   margin: 0 auto;
   padding: 1rem 0;
 }
