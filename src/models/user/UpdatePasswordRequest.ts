@@ -1,4 +1,4 @@
-export interface PasswordChangeRequest {
+export interface UpdatePasswordRequest {
   currentPassword: string;
   newPassword: string;
   confirmNewPassword: string;

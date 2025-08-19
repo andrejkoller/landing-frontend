@@ -10,9 +10,19 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 32px;
   max-width: var(--header-max-width);
   height: 100%;
   width: 100%;
   margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.profileHeading {
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-600);
+  color: var(--text-default);
+  margin: 0;
+  width: 100%;
 }

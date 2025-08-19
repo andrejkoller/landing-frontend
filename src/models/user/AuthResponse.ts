@@ -1,6 +1,6 @@
 import { PublicUser } from "./PublicUser";
 
-export interface LoginResponse {
+export interface AuthResponse {
   user: PublicUser;
   token: string;
 }
