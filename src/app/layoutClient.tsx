@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/contexts/theme/ThemeProvider";
 import { useState } from "react";
 import { Backdrop } from "@mui/material";
 import { usePathname } from "next/navigation";
+import { AccountSettingsHeader } from "@/components/AccountSettingsHeader/AccountSettingsHeader";
 
 export default function LayoutClient({
   children,
@@ -14,21 +15,21 @@ export default function LayoutClient({
 }>) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const showHeaderFooter = !pathname.startsWith("/account");
+  const showFooter = !pathname.startsWith("/account");
+  const showAccountSettingsHeader = pathname.startsWith("/account");
 
   return (
     <ThemeProvider>
-      {showHeaderFooter && (
-        <Header
-          activeDropdown={activeDropdown !== null ? activeDropdown : undefined}
-          setActiveDropdown={setActiveDropdown}
-        />
-      )}
+      <Header
+        activeDropdown={activeDropdown !== null ? activeDropdown : undefined}
+        setActiveDropdown={setActiveDropdown}
+      />
+      {showAccountSettingsHeader && <AccountSettingsHeader />}
       <main className="mainContent">{children}</main>
-      {showHeaderFooter && <Footer />}
+      {showFooter && <Footer />}
       <Backdrop
         sx={{
-          zIndex: 999,
+          zIndex: "var(--z-index-backdrop)",
         }}
         open={activeDropdown !== null}
         onClick={() => setActiveDropdown(null)}

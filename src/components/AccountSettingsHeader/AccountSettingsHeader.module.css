@@ -4,8 +4,9 @@
   width: 100%;
   transition: min-height 0.3s;
   background-color: var(--bg-main);
-  position: relative;
-  z-index: 999;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-account-settings-header);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.04), 0 2px 18px rgba(0, 0, 0, 0.1);
 }
 
@@ -17,7 +18,7 @@
   max-width: var(--header-max-width);
   margin: 0 auto;
   position: relative;
-  z-index: 10;
+  z-index: var(--z-index-account-settings-header);
 }
 
 .settingsHeaderContent {
@@ -62,7 +63,6 @@
   padding: 0.5rem 0.75rem;
   line-height: var(--line-height-base);
   position: relative;
-  z-index: 1;
   display: flex;
   align-items: center;
   text-decoration: none;

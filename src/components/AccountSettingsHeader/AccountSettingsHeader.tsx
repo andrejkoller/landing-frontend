@@ -15,10 +15,10 @@ interface AccountHeaderProps {
 
 export const AccountSettingsHeader = ({
   navItems = [
-    { href: "/account/profile", label: "Account" },
-    { href: "/account/profile/security", label: "Security" },
-    { href: "/account/profile/notifications", label: "Notifications" },
-    { href: "/account/profile/activity", label: "Activity" },
+    { href: "/account", label: "Account" },
+    { href: "/account/security", label: "Security" },
+    { href: "/account/notifications", label: "Notifications" },
+    { href: "/account/activity", label: "Activity" },
   ],
 }: AccountHeaderProps) => {
   const pathname = usePathname();

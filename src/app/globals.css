@@ -25,6 +25,13 @@
   --font-weight-900: 900;
 
   --line-height-base: 1.5;
+
+  --z-index-backdrop: 999;
+  --z-index-account-settings-header: 999;
+  --z-index-header: 1000;
+  --z-index-dropdown: 2000;
+  --z-index-modal: 3000;
+  --z-index-tooltip: 4000;
 }
 
 [data-theme="light"] {
