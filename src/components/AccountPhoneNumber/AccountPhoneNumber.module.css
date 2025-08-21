@@ -1,0 +1,51 @@
+.accountPhoneNumber {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.accountPhoneNumberHeading {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-600);
+  margin-bottom: 16px;
+}
+
+.accountPhoneNumberContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: -webkit-fill-available;
+  background-color: var(--bg-main);
+  padding: 1rem;
+  border-radius: 0.125rem;
+}
+
+.accountPhoneNumberFieldGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.accountPhoneNumberDescription {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-500);
+  color: var(--text-default);
+}
+
+.accountPhoneNumberButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.accountPhoneNumberButton {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-700);
+  color: var(--text-default);
+  border: none;
+  cursor: pointer;
+}

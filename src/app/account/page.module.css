@@ -9,7 +9,7 @@
 
 .accountContent {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   gap: 32px;
@@ -17,6 +17,18 @@
   height: 100%;
   width: 100%;
   margin: 0 auto;
+}
+
+.accountLeft {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accountRight {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
