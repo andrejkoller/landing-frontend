@@ -15,7 +15,6 @@ export default function LayoutClient({
 }>) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const showFooter = !pathname.startsWith("/account");
   const showAccountSettingsHeader = pathname.startsWith("/account");
 
   return (
@@ -26,7 +25,7 @@ export default function LayoutClient({
       />
       {showAccountSettingsHeader && <AccountSettingsHeader />}
       <main className="mainContent">{children}</main>
-      {showFooter && <Footer />}
+      <Footer />
       <Backdrop
         sx={{
           zIndex: "var(--z-index-backdrop)",

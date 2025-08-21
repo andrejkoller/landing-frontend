@@ -11,10 +11,9 @@ export default function Page() {
         <div className={styles.accountLeft}>
           <AccountEmail />
           <AccountPhoneNumber />
-        </div>
-        <div className={styles.accountRight}>
           <AccountOptions />
         </div>
+        <div className={styles.accountRight}></div>
       </div>
     </div>
   );
