@@ -1,5 +1,4 @@
-import { ThemeContext } from "@/contexts/theme/ThemeContext";
-import { useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ThemeSelect.module.css";
 import { formControlSx } from "@/utils/formControlSx";
 import { selectSx } from "@/utils/selectSx";
@@ -11,73 +10,84 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { ChevronDownIcon } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
+import { THEMES } from "@/types/theme";
+import type { Theme } from "@/types/theme";
+
+interface ThemeOption {
+  value: Theme;
+  label: string;
+  icon?: string;
+}
+
+const THEME_OPTIONS: ThemeOption[] = [
+  { value: THEMES.LIGHT, label: "Light" },
+  { value: THEMES.DARK, label: "Dark" },
+  { value: THEMES.BLACK, label: "Black" },
+];
 
 export const ThemeSelect = () => {
+  const { theme, setTheme } = useTheme();
   const [isThemeSelectOpen, setIsThemeSelectOpen] = useState(false);
-  const context = useContext(ThemeContext);
+  const [isClient, setIsClient] = useState(false);
+  const currentTheme = theme || THEMES.LIGHT;
 
-  if (!context) {
-    return (
-      <div className={styles["theme-container"]}>
-        <span
-          className={styles["theme-label"]}
-          style={{ color: "var(--color-red)" }}
-        >
-          Error: Theme component must be used within a ThemeProvider.
-        </span>
-      </div>
-    );
-  }
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
-  const { theme, setLightTheme, setDarkTheme, setBlackTheme } = context;
-
-  const handleThemeChange = (event: SelectChangeEvent) => {
-    switch (event.target.value) {
-      case "light":
-        setLightTheme?.();
-        break;
-      case "dark":
-        setDarkTheme?.();
-        break;
-      case "black":
-        setBlackTheme?.();
-        break;
-      default:
-        break;
-    }
+  const handleThemeChange = (event: SelectChangeEvent<Theme>) => {
+    const newTheme = event.target.value as Theme;
+    setTheme(newTheme);
   };
 
-  return (
-    <FormControl sx={formControlSx} fullWidth>
-      <InputLabel id="theme-select-label">Theme</InputLabel>
-      <Select
-        sx={selectSx}
-        MenuProps={{
-          PaperProps: { elevation: 2 },
-        }}
-        open={isThemeSelectOpen}
-        onOpen={() => setIsThemeSelectOpen(true)}
-        onClose={() => setIsThemeSelectOpen(false)}
-        value={theme}
-        onChange={handleThemeChange}
-        label="Theme"
-        labelId="theme-select-label"
-        id="theme-select"
-        variant="outlined"
-        IconComponent={() => {
-          return (
+  if (isClient) {
+    return (
+      <FormControl sx={formControlSx} fullWidth>
+        <InputLabel id="theme-select-label">Theme</InputLabel>
+        <Select
+          sx={selectSx}
+          MenuProps={{
+            PaperProps: {
+              elevation: 2,
+              style: { zIndex: 1001 },
+            },
+          }}
+          open={isThemeSelectOpen}
+          onOpen={() => setIsThemeSelectOpen(true)}
+          onClose={() => setIsThemeSelectOpen(false)}
+          value={currentTheme}
+          onChange={handleThemeChange}
+          label="Theme"
+          labelId="theme-select-label"
+          id="theme-select"
+          variant="outlined"
+          IconComponent={() => (
             <ChevronDownIcon
               className={`${styles.chevronIcon} ${
                 isThemeSelectOpen ? styles.chevronIconOpen : ""
               }`}
             />
-          );
-        }}
-      >
-        <MenuItem value="light">Light</MenuItem>
-        <MenuItem value="dark">Dark</MenuItem>
-        <MenuItem value="black">Black</MenuItem>
-      </Select>
-    </FormControl>
-  );
+          )}
+        >
+          {THEME_OPTIONS.map((option) => (
+            <MenuItem
+              key={option.value}
+              value={option.value}
+              className={styles.themeMenuItem}
+            >
+              <span className={styles.themeMenuItemContent}>
+                {option.icon && (
+                  <span className={styles.themeIcon}>{option.icon}</span>
+                )}
+                {option.label}
+              </span>
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    );
+  } else {
+    return <div>Loading themes...</div>;
+  }
 };

@@ -2,7 +2,7 @@
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 import "@/app/globals.css";
-import { ThemeProvider } from "@/contexts/theme/ThemeProvider";
+import { ThemeProvider } from "@/contexts/ThemeProvider";
 import { useState } from "react";
 import { Backdrop } from "@mui/material";
 import { usePathname } from "next/navigation";

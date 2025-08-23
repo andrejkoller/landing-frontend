@@ -3,5 +3,4 @@ export interface PublicUser {
   lastName: string;
   email: string;
   phoneNumber?: string;
-  theme: string;
 }

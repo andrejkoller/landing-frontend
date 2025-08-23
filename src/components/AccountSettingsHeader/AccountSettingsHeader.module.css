@@ -6,7 +6,7 @@
   background-color: var(--bg-main);
   position: relative;
   z-index: var(--z-index-account-settings-header);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.04), 0 2px 18px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--border-default);
 }
 
 .settingsHeaderContainer {

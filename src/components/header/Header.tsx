@@ -5,7 +5,7 @@ import { ButtonBase } from "@mui/material";
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { AnimatedLink } from "../AnimatedLink/AnimatedLink";
-import { accountService } from "@/services/account/accountService";
+import { accountService } from "@/services/accountService";
 
 interface HeaderProps {
   activeDropdown?: string;
