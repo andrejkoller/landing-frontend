@@ -8,12 +8,12 @@ export default function Page() {
   return (
     <div className={styles.accountContainer}>
       <div className={styles.accountContent}>
-        <div className={styles.accountLeft}>
+        <div className={styles.accountLeft}></div>
+        <div className={styles.accountRight}>
           <AccountEmail />
           <AccountPhoneNumber />
           <AccountOptions />
         </div>
-        <div className={styles.accountRight}></div>
       </div>
     </div>
   );

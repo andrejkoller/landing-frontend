@@ -116,8 +116,10 @@ export const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className={styles.footerCopyright}>
-            &copy; {new Date().getFullYear()} Presenter. All rights reserved.
+          <div className={styles.footerBottom}>
+            <div className={styles.footerCopyright}>
+              &copy; {new Date().getFullYear()} Presenter. All rights reserved.
+            </div>
           </div>
         </div>
       </div>

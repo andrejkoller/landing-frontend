@@ -5,7 +5,7 @@
   justify-content: center;
   background-color: var(--bg-main);
   color: var(--text-default);
-  height: 100vh;
+  height: 50vh;
   width: 100%;
 }
 
@@ -30,8 +30,8 @@
 }
 
 .footerLinksContainer {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
@@ -81,7 +81,10 @@
   transition: color 0.2s ease-in-out;
 }
 
-.footerCopyright {
+.footerBottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-500);
   color: var(--text-default);

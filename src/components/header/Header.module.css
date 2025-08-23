@@ -5,7 +5,8 @@
   transition: min-height 0.3s;
   border-bottom: 1px solid var(--border-default);
   background-color: var(--bg-main);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: var(--z-index-header);
 }
 
