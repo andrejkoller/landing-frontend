@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import styles from "./ThemeSelect.module.css";
 import { formControlSx } from "@/utils/formControlSx";

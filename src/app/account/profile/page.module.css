@@ -1,4 +1,4 @@
-.accountContainer {
+.profileContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.accountContent {
+.profileContent {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -19,8 +19,20 @@
   margin: 0 auto;
 }
 
+.profileLeft {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profileRight {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 @media (max-width: 768px) {
-  .accountContent {
+  .profileContent {
     flex-direction: column;
     gap: 24px;
   }
