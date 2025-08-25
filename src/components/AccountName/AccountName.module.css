@@ -1,49 +1,42 @@
-.accountEmail {
+.accountName {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
 }
 
-.accountEmailHeading {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-600);
-  margin: 0 0 1rem 0;
-}
-
-.accountEmailContainer {
+.accountNameContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   width: -webkit-fill-available;
   background-color: var(--bg-main);
   padding: 1rem;
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--border-default);
+  border-radius: var(--border-radius-xs);
 }
 
-.accountEmailFieldGroup {
+.accountNameFieldGroup {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: 16px;
 }
 
-.accountEmailDescription {
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-500);
+.accountNameDescription {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-700);
   color: var(--text-default);
 }
 
-.accountEmailButtonContainer {
+.accountNameButtonContainer {
   display: flex;
   justify-content: flex-end;
 }
 
-.accountEmailButton {
+.accountNameButton {
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-700);
   color: var(--text-default);

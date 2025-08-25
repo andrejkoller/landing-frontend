@@ -10,7 +10,7 @@ export const AccountEmail = () => {
         <div className={styles.accountEmailFieldGroup}>
           <MailIcon className={styles.accountEmailIcon} />
           <p className={styles.accountEmailDescription}>
-            Please enter your email address.
+            andrejkoller@outlook.com
           </p>
         </div>
         <div className={styles.accountEmailButtonContainer}>

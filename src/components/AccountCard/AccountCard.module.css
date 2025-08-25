@@ -1,0 +1,36 @@
+.accountCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: -webkit-fill-available;
+  background-color: var(--bg-main);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-default);
+  overflow: hidden;
+}
+
+.accountCardBanner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 180px;
+  width: -webkit-fill-available;
+  padding: 1rem;
+}
+
+.accountCardTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-500);
+  color: var(--bg-main);
+  margin: 0;
+}
+
+.accountCardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}

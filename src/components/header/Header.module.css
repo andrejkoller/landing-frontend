@@ -132,7 +132,7 @@
   justify-content: center;
   padding: 12px 28.8px;
   border: 0.225rem solid var(--text-default);
-  border-radius: 2rem;
+  border-radius: var(--border-radius-xxxl);
   max-height: 3rem;
   min-width: 6rem;
   font-size: var(--font-size-lg);

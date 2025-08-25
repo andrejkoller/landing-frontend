@@ -26,7 +26,8 @@
   width: -webkit-fill-available;
   background-color: var(--bg-main);
   padding: 1rem;
-  border-radius: 0.125rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-default);
 }
 
 .accountField {

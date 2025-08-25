@@ -10,7 +10,7 @@ export const AccountPhoneNumber = () => {
         <div className={styles.accountPhoneNumberFieldGroup}>
           <PhoneIcon className={styles.accountPhoneNumberIcon} />
           <p className={styles.accountPhoneNumberDescription}>
-            Please enter your phone number.
+            +41 79 123 45 67
           </p>
         </div>
         <div className={styles.accountPhoneNumberButtonContainer}>

@@ -81,6 +81,21 @@ export const Footer = () => {
                 </li>
               </ul>
             </div>
+            <div className={styles.footerSupportColumn}>
+              <h3 className={styles.footerSupportTitle}>Support</h3>
+              <ul className={styles.footerSupportLinks}>
+                <li className={styles.footerSupportLink}>
+                  <AnimatedLink href={"/help"} hoverType={"color"}>
+                    Help
+                  </AnimatedLink>
+                </li>
+                <li className={styles.footerSupportLink}>
+                  <AnimatedLink href={"/system-status"} hoverType={"color"}>
+                    System Status
+                  </AnimatedLink>
+                </li>
+              </ul>
+            </div>
             <div className={styles.footerSocialColumn}>
               <h3 className={styles.footerSocialTitle}>Socials</h3>
               <ul className={styles.footerSocialLinks}>

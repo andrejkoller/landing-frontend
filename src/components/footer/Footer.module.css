@@ -32,7 +32,7 @@
 
 .footerLinksContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
@@ -41,6 +41,7 @@
 .footerProductColumn,
 .footerCompanyColumn,
 .footerLearnColumn,
+.footerSupportColumn,
 .footerSocialColumn {
   display: flex;
   flex-direction: column;
@@ -49,6 +50,7 @@
 .footerProductColumn h3,
 .footerCompanyColumn h3,
 .footerLearnColumn h3,
+.footerSupportColumn h3,
 .footerSocialColumn h3 {
   margin: 0 0 0.5rem;
   font-size: var(--font-size-lg);
@@ -58,6 +60,7 @@
 .footerProductColumn ul,
 .footerCompanyColumn ul,
 .footerLearnColumn ul,
+.footerSupportColumn ul,
 .footerSocialColumn ul {
   list-style: none;
   padding: 0;
@@ -67,6 +70,7 @@
 .footerProductColumn li,
 .footerCompanyColumn li,
 .footerLearnColumn li,
+.footerSupportColumn li,
 .footerSocialColumn li {
   padding: 0.5rem 0;
 }
@@ -74,6 +78,7 @@
 .footerProductColumn a,
 .footerCompanyColumn a,
 .footerLearnColumn a,
+.footerSupportColumn a,
 .footerSocialColumn a {
   color: var(--text-default);
   text-decoration: none;
