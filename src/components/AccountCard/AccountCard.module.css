@@ -3,11 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  gap: 1.5rem;
   width: -webkit-fill-available;
   background-color: var(--bg-main);
   border-radius: var(--border-radius-lg);
   border: 1px solid var(--border-default);
   overflow: hidden;
+  position: relative;
 }
 
 .accountCardBanner {
@@ -18,13 +20,37 @@
   height: 180px;
   width: -webkit-fill-available;
   padding: 1rem;
+  position: relative;
 }
 
 .accountCardTitle {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-500);
-  color: var(--bg-main);
+  color: var(--text-default);
   margin: 0;
+}
+
+.accountCardProfileImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -48px;
+  left: 1rem;
+  width: 96px;
+  height: 96px;
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  background-color: var(--bg-main);
+  border: 4px solid var(--text-default);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.accountCardProfileImageInitials {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-500);
+  color: var(--text-default);
 }
 
 .accountCardContainer {

@@ -19,16 +19,12 @@
   margin: 4rem auto 0 auto;
 }
 
-.profileLeft {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
+.profileLeft,
 .profileRight {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 1rem;
 }
 
 @media (max-width: 768px) {

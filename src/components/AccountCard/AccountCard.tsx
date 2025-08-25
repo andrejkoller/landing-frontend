@@ -7,6 +7,9 @@ export const AccountCard = () => {
     <div className={styles.accountCard}>
       <AnimatedBackground className={styles.accountCardBanner}>
         <h2 className={styles.accountCardTitle}>Account</h2>
+        <div className={styles.accountCardProfileImage}>
+          <span className={styles.accountCardProfileImageInitials}>AK</span>
+        </div>
       </AnimatedBackground>
       <div className={styles.accountCardContainer}>
         <AccountName />
