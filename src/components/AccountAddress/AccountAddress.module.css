@@ -52,7 +52,8 @@
 
 .accountAddressButton {
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-700);
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-inter);
   color: var(--text-default);
   border: none;
   cursor: pointer;
