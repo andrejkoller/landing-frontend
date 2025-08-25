@@ -12,11 +12,19 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 32px;
+  gap: 1.5rem;
   max-width: var(--header-max-width);
   height: 100%;
   width: 100%;
-  margin: 0 auto;
+  margin: 4rem auto 0 auto;
+}
+
+.accountLeft,
+.accountRight {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem;
 }
 
 @media (max-width: 768px) {
