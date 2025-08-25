@@ -1,8 +1,11 @@
 import { MailIcon } from "lucide-react";
 import styles from "./AccountEmail.module.css";
 import { ButtonBase } from "@mui/material";
+import { useDialog } from "@/contexts/DialogProvider";
 
 export const AccountEmail = () => {
+  const { openUpdateEmailDialog } = useDialog();
+
   return (
     <div className={styles.accountEmail}>
       <h1 className={styles.accountEmailHeading}>Email</h1>
@@ -14,7 +17,12 @@ export const AccountEmail = () => {
           </p>
         </div>
         <div className={styles.accountEmailButtonContainer}>
-          <ButtonBase className={styles.accountEmailButton}>Edit</ButtonBase>
+          <ButtonBase
+            className={styles.accountEmailButton}
+            onClick={openUpdateEmailDialog}
+          >
+            Edit
+          </ButtonBase>
         </div>
       </div>
     </div>

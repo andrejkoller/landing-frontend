@@ -1,8 +1,11 @@
 import { PhoneIcon } from "lucide-react";
 import styles from "./AccountPhoneNumber.module.css";
 import { ButtonBase } from "@mui/material";
+import { useDialog } from "@/contexts/DialogProvider";
 
 export const AccountPhoneNumber = () => {
+  const { openUpdatePhoneNumberDialog } = useDialog();
+
   return (
     <div className={styles.accountPhoneNumber}>
       <h1 className={styles.accountPhoneNumberHeading}>Phone Number</h1>
@@ -14,7 +17,10 @@ export const AccountPhoneNumber = () => {
           </p>
         </div>
         <div className={styles.accountPhoneNumberButtonContainer}>
-          <ButtonBase className={styles.accountPhoneNumberButton}>
+          <ButtonBase
+            className={styles.accountPhoneNumberButton}
+            onClick={openUpdatePhoneNumberDialog}
+          >
             Edit
           </ButtonBase>
         </div>

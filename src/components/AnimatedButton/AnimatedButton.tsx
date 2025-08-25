@@ -1,3 +1,4 @@
+import { buttonBaseSx } from "@/utils/buttonBaseSx";
 import { ButtonBase } from "@mui/material";
 import { useEffect, useRef } from "react";
 
@@ -60,6 +61,7 @@ export const AnimatedButton = ({
 
   return (
     <ButtonBase
+      sx={buttonBaseSx}
       type={type}
       className={className}
       ref={animatedButton}

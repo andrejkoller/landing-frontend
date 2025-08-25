@@ -1,21 +1,73 @@
-.accountActions {
+.dialog {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--bg-main);
+  height: 100vh;
   width: 100%;
-  margin-top: 16px;
+  position: fixed;
+  top: 100vh;
+  left: 0;
+  z-index: var(--z-index-modal);
+  transition: top 0.3s ease-in-out;
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
 
-.accountForm .accountActions .accountButton {
-  padding: 12px 28.8px;
-  border: 0.225rem solid var(--text-default);
-  border-radius: var(--border-radius-xxxl);
+.open {
+  top: 0;
+}
+
+.dialogContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 460px;
+  width: 100%;
+}
+
+.dialogHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dialogForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.dialogField {
+  width: 100%;
+}
+
+.dialogActions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dialogButton {
   min-width: 100%;
-  font-size: var(--font-size-lg);
+  font-size: 1.125rem;
   line-height: var(--line-height-base);
   transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
-  color: var(--bg-main) !important;
-  font-weight: var(--font-weight-500);
-  background-color: var(--text-default);
+  text-decoration: none;
+  color: var(--text-default);
+  font-weight: 600;
+  background-color: var(--bg-main);
   cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.dialogButton:hover {
+  transform: scale(1.05);
 }
