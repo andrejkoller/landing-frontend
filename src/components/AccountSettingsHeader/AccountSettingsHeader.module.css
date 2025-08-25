@@ -45,17 +45,30 @@
 }
 
 .settingsHeaderItem {
+  position: relative;
+}
+
+.settingsHeaderItem::before {
   border-radius: 1.5625rem;
-  border: 0.125rem solid transparent;
+  bottom: 0.125rem;
+  content: "";
+  height: unset;
+  left: 0.125rem;
+  position: absolute;
+  right: 0.125rem;
+  top: 0.125rem;
+  width: unset;
+  background-color: transparent;
   cursor: pointer;
 }
 
-.settingsHeaderItem:hover {
-  border-color: var(--border-default);
+.settingsHeaderItem:hover::before {
+  border: 1px solid var(--border-default);
+  opacity: 1;
 }
 
-.settingsHeaderItemActive {
-  border-color: var(--border-default);
+.settingsHeaderItemActive::before {
+  border: 1px solid var(--border-default);
 }
 
 .settingsHeaderLink {
