@@ -1,8 +1,8 @@
 import { FormControlLabel } from "@mui/material";
 import styles from "./AccountOptions.module.css";
 import { AnimatedCheckbox } from "../AnimatedCheckbox/AnimatedCheckbox";
-import { ThemeSelect } from "../ThemeSelect/ThemeSelect";
-import { LanguageSelect } from "../LanguageSelect/LanguageSelect";
+import { AccountThemeSelect } from "../AccountThemeSelect/AccountThemeSelect";
+import { AccountLanguageSelect } from "../AccountLanguageSelect/AccountLanguageSelect";
 import { AccountLogout } from "../AccountLogout/AccountLogout";
 import { AccountDelete } from "../AccountDelete/AccountDelete";
 
@@ -12,10 +12,10 @@ export const AccountOptions = () => {
       <h1 className={styles.accountOptionsHeading}>Account Options</h1>
       <div className={styles.accountFieldGroup}>
         <div className={styles.accountField}>
-          <ThemeSelect />
+          <AccountThemeSelect />
         </div>
         <div className={styles.accountField}>
-          <LanguageSelect />
+          <AccountLanguageSelect />
         </div>
         <div className={styles.accountField}>
           <FormControlLabel

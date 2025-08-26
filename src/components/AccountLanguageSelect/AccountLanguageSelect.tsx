@@ -1,11 +1,11 @@
-import styles from "./LanguageSelect.module.css";
+import styles from "./AccountLanguageSelect.module.css";
 import { formControlSx } from "@/utils/formControlSx";
 import { selectSx } from "@/utils/selectSx";
 import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import { ChevronDownIcon } from "lucide-react";
 import { useState } from "react";
 
-export const LanguageSelect = () => {
+export const AccountLanguageSelect = () => {
   const [isLanguageSelectOpen, setIsLanguageSelectOpen] = useState(false);
   const [language, setLanguage] = useState("en");
 

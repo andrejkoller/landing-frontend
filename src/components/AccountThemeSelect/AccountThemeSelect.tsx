@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "./ThemeSelect.module.css";
+import styles from "./AccountThemeSelect.module.css";
 import { formControlSx } from "@/utils/formControlSx";
 import { selectSx } from "@/utils/selectSx";
 import {
@@ -28,7 +28,7 @@ const THEME_OPTIONS: ThemeOption[] = [
   { value: THEMES.BLACK, label: "Black" },
 ];
 
-export const ThemeSelect = () => {
+export const AccountThemeSelect = () => {
   const { theme, setTheme } = useTheme();
   const [isThemeSelectOpen, setIsThemeSelectOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
