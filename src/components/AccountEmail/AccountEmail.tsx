@@ -1,7 +1,7 @@
 import { MailIcon } from "lucide-react";
 import styles from "./AccountEmail.module.css";
 import { ButtonBase } from "@mui/material";
-import { useDialog } from "@/contexts/DialogProvider";
+import { useDialog } from "@/hooks/useDialog";
 
 export const AccountEmail = () => {
   const { openUpdateEmailDialog } = useDialog();

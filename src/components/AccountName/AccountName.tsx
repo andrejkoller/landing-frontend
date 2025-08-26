@@ -1,4 +1,4 @@
-import { useDialog } from "@/contexts/DialogProvider";
+import { useDialog } from "@/hooks/useDialog";
 import styles from "./AccountName.module.css";
 import { ButtonBase } from "@mui/material";
 

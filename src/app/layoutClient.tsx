@@ -9,10 +9,11 @@ import { Backdrop } from "@mui/material";
 import { usePathname } from "next/navigation";
 import { AccountSettingsHeader } from "@/components/AccountSettingsHeader/AccountSettingsHeader";
 import { UpdateEmailDialog } from "@/components/dialogs/UpdateEmailDialog/UpdateEmailDialog";
-import { DialogProvider, useDialog } from "@/contexts/DialogProvider";
+import { DialogProvider } from "@/contexts/DialogProvider";
 import { UpdateAddressDialog } from "@/components/dialogs/UpdateAddressDialog/UpdateAddressDialog";
 import { UpdateNameDialog } from "@/components/dialogs/UpdateNameDialog/UpdateNameDialog";
 import { UpdatePhoneNumberDialog } from "@/components/dialogs/UpdatePhoneNumberDialog/UpdatePhoneNumberDialog";
+import { useDialog } from "@/hooks/useDialog";
 
 const Dialogs = () => {
   const {

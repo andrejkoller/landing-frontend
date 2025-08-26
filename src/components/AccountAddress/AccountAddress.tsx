@@ -1,7 +1,7 @@
 import { HouseIcon } from "lucide-react";
 import styles from "./AccountAddress.module.css";
 import { ButtonBase } from "@mui/material";
-import { useDialog } from "@/contexts/DialogProvider";
+import { useDialog } from "@/hooks/useDialog";
 
 export const AccountAddress = () => {
   const { openUpdateAddressDialog } = useDialog();
