@@ -61,22 +61,88 @@ export default function LayoutClient({
   return (
     <ThemeProvider>
       <DialogProvider>
-        <Header
-          activeDropdown={activeDropdown !== null ? activeDropdown : undefined}
+        <LayoutContent
+          activeDropdown={activeDropdown}
           setActiveDropdown={setActiveDropdown}
-        />
-        {showAccountSettingsHeader && <AccountSettingsHeader />}
-        <main className="mainContent">{children}</main>
-        <Footer />
-        <Backdrop
-          sx={{
-            zIndex: "var(--z-index-backdrop)",
-          }}
-          open={activeDropdown !== null}
-          onClick={() => setActiveDropdown(null)}
-        />
-        <Dialogs />
+          showAccountSettingsHeader={showAccountSettingsHeader}
+        >
+          {children}
+        </LayoutContent>
       </DialogProvider>
     </ThemeProvider>
+  );
+}
+
+function LayoutContent({
+  children,
+  activeDropdown,
+  setActiveDropdown,
+  showAccountSettingsHeader,
+}: {
+  children: React.ReactNode;
+  activeDropdown: string | null;
+  setActiveDropdown: (value: string | null) => void;
+  showAccountSettingsHeader: boolean;
+}) {
+  const {
+    isUpdateEmailDialogOpen,
+    isUpdateNameDialogOpen,
+    isUpdatePhoneNumberDialogOpen,
+    isUpdateAddressDialogOpen,
+    closeUpdateEmailDialog,
+    closeUpdateNameDialog,
+    closeUpdatePhoneNumberDialog,
+    closeUpdateAddressDialog,
+  } = useDialog();
+
+  const isAnyDialogOpen =
+    isUpdateEmailDialogOpen ||
+    isUpdateNameDialogOpen ||
+    isUpdatePhoneNumberDialogOpen ||
+    isUpdateAddressDialogOpen;
+
+  const handleDropdownBackdropClick = () => {
+    if (activeDropdown !== null) {
+      setActiveDropdown(null);
+    }
+  };
+
+  const handleDialogBackdropClick = () => {
+    if (isAnyDialogOpen) {
+      closeUpdateEmailDialog();
+      closeUpdateNameDialog();
+      closeUpdatePhoneNumberDialog();
+      closeUpdateAddressDialog();
+    }
+  };
+
+  return (
+    <>
+      <Header
+        activeDropdown={activeDropdown !== null ? activeDropdown : undefined}
+        setActiveDropdown={setActiveDropdown}
+      />
+      {showAccountSettingsHeader && <AccountSettingsHeader />}
+      <main className="mainContent">{children}</main>
+      <Footer />
+
+      <Backdrop
+        sx={{
+          zIndex: "var(--z-index-dropdown-backdrop)",
+        }}
+        open={activeDropdown !== null && !isAnyDialogOpen}
+        onClick={handleDropdownBackdropClick}
+      />
+
+      <Backdrop
+        sx={{
+          zIndex: "var(--z-index-dialog-backdrop)",
+        }}
+        open={isAnyDialogOpen}
+        onClick={handleDialogBackdropClick}
+      />
+
+      <Dialogs />
+    </>
   );
 }
