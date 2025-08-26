@@ -4,6 +4,7 @@ import { ButtonBase, FormControl, TextField } from "@mui/material";
 import styles from "../dialog.module.css";
 import { XIcon } from "lucide-react";
 import { formControlSx } from "@/utils/formControlSx";
+import { closeButtonSx } from "@/utils/closeButtonSx";
 
 interface UpdateEmailDialogProps {
   open: boolean;
@@ -18,12 +19,18 @@ export const UpdateEmailDialog = ({
     <div className={`${styles.dialog} ${open ? styles.open : ""}`}>
       <div className={styles.dialogContainer}>
         <div className={styles.dialogHeader}>
-          <h2>Logo</h2>
-          <ButtonBase className={styles.dialogCloseButton} onClick={onClose}>
+          <ButtonBase
+            sx={closeButtonSx}
+            className={styles.dialogCloseButton}
+            onClick={onClose}
+          >
             <XIcon />
           </ButtonBase>
         </div>
         <form className={styles.dialogForm}>
+          <div className={styles.dialogTitle}>
+            <h3>Edit your email</h3>
+          </div>
           <div className={styles.dialogField}>
             <FormControl sx={formControlSx} fullWidth>
               <TextField

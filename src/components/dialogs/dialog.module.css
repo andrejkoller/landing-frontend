@@ -31,8 +31,13 @@
 .dialogHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.dialogCloseButton:hover {
+  background-color: var(--border-default);
 }
 
 .dialogForm {
@@ -44,6 +49,18 @@
   width: 100%;
 }
 
+.dialogTitle {
+  width: 100%;
+  text-align: center;
+}
+
+.dialogTitle h3 {
+  margin: 0;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-600);
+  color: var(--text-default);
+}
+
 .dialogField {
   width: 100%;
 }
@@ -52,6 +69,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-top: 1.5rem;
 }
 
 .dialogButton {

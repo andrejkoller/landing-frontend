@@ -4,6 +4,7 @@ import { ButtonBase, FormControl, TextField } from "@mui/material";
 import styles from "../dialog.module.css";
 import { formControlSx } from "@/utils/formControlSx";
 import { XIcon } from "lucide-react";
+import { closeButtonSx } from "@/utils/closeButtonSx";
 
 interface UpdatePasswordDialogProps {
   open: boolean;
@@ -18,12 +19,18 @@ export const UpdatePasswordDialog = ({
     <div className={`${styles.dialog} ${open ? styles.open : ""}`}>
       <div className={styles.dialogContainer}>
         <div className={styles.dialogHeader}>
-          <h2>Logo</h2>
-          <ButtonBase className={styles.dialogCloseButton} onClick={onClose}>
+          <ButtonBase
+            sx={closeButtonSx}
+            className={styles.dialogCloseButton}
+            onClick={onClose}
+          >
             <XIcon />
           </ButtonBase>
         </div>
         <form className={styles.dialogForm}>
+          <div className={styles.dialogTitle}>
+            <h3>Edit your password</h3>
+          </div>
           <div className={styles.dialogField}>
             <FormControl sx={formControlSx} fullWidth>
               <TextField
