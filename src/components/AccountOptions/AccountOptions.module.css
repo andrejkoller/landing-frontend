@@ -33,3 +33,7 @@
 .accountField {
   width: 100%;
 }
+
+.accountLogoutButtonText {
+  margin-left: 8px;
+}
