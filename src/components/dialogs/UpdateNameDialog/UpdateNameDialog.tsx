@@ -5,6 +5,7 @@ import { XIcon } from "lucide-react";
 import { formControlSx } from "@/utils/formControlSx";
 import { closeButtonSx } from "@/utils/closeButtonSx";
 import { buttonBaseSx } from "@/utils/buttonBaseSx";
+import { useAuth } from "@/hooks/useAuth";
 
 interface UpdateNameDialogProps {
   open: boolean;
@@ -12,6 +13,8 @@ interface UpdateNameDialogProps {
 }
 
 export const UpdateNameDialog = ({ open, onClose }: UpdateNameDialogProps) => {
+  const { publicUser } = useAuth();
+
   return (
     <div className={`${styles.dialog} ${open ? styles.open : ""}`}>
       <div className={styles.dialogContainer}>
@@ -38,6 +41,7 @@ export const UpdateNameDialog = ({ open, onClose }: UpdateNameDialogProps) => {
                 margin="normal"
                 required
                 autoFocus
+                value={publicUser?.firstName || ""}
               />
             </FormControl>
           </div>
@@ -50,6 +54,7 @@ export const UpdateNameDialog = ({ open, onClose }: UpdateNameDialogProps) => {
                 placeholder="Koller"
                 margin="normal"
                 required
+                value={publicUser?.lastName || ""}
               />
             </FormControl>
           </div>

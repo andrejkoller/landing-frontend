@@ -2,9 +2,11 @@ import { PhoneIcon } from "lucide-react";
 import styles from "./AccountPhoneNumber.module.css";
 import { ButtonBase } from "@mui/material";
 import { useDialog } from "@/hooks/useDialog";
+import { useAuth } from "@/hooks/useAuth";
 
 export const AccountPhoneNumber = () => {
   const { openUpdatePhoneNumberDialog } = useDialog();
+  const { publicUser } = useAuth();
 
   return (
     <div className={styles.accountPhoneNumber}>
@@ -13,7 +15,7 @@ export const AccountPhoneNumber = () => {
         <div className={styles.accountPhoneNumberFieldGroup}>
           <PhoneIcon className={styles.accountPhoneNumberIcon} />
           <p className={styles.accountPhoneNumberDescription}>
-            +41 79 123 45 67
+            {publicUser?.phoneNumber || "No phone number set"}
           </p>
         </div>
         <div className={styles.accountPhoneNumberButtonContainer}>

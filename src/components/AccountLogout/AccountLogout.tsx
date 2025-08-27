@@ -1,7 +1,14 @@
+import { useAuth } from "@/hooks/useAuth";
 import { ButtonBase } from "@mui/material";
 import { LogOutIcon } from "lucide-react";
 
 export const AccountLogout = () => {
+  const { logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+  };
+
   return (
     <ButtonBase
       sx={{
@@ -15,6 +22,7 @@ export const AccountLogout = () => {
         fontFamily: "Arial",
         fontSize: "1rem",
       }}
+      onClick={handleLogout}
     >
       <LogOutIcon />
       <span>Logout</span>

@@ -5,6 +5,7 @@ import { XIcon } from "lucide-react";
 import { formControlSx } from "@/utils/formControlSx";
 import { closeButtonSx } from "@/utils/closeButtonSx";
 import { buttonBaseSx } from "@/utils/buttonBaseSx";
+import { useAuth } from "@/hooks/useAuth";
 
 interface UpdatePhoneNumberDialogProps {
   open: boolean;
@@ -15,6 +16,8 @@ export const UpdatePhoneNumberDialog = ({
   open,
   onClose,
 }: UpdatePhoneNumberDialogProps) => {
+  const { publicUser } = useAuth();
+
   return (
     <div className={`${styles.dialog} ${open ? styles.open : ""}`}>
       <div className={styles.dialogContainer}>
@@ -42,6 +45,7 @@ export const UpdatePhoneNumberDialog = ({
                 fullWidth
                 margin="normal"
                 required
+                value={publicUser?.phoneNumber || ""}
               />
             </FormControl>
           </div>

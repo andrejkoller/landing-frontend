@@ -5,6 +5,7 @@ import { XIcon } from "lucide-react";
 import { formControlSx } from "@/utils/formControlSx";
 import { closeButtonSx } from "@/utils/closeButtonSx";
 import { buttonBaseSx } from "@/utils/buttonBaseSx";
+import { useAuth } from "@/hooks/useAuth";
 
 interface UpdateEmailDialogProps {
   open: boolean;
@@ -15,6 +16,8 @@ export const UpdateEmailDialog = ({
   open,
   onClose,
 }: UpdateEmailDialogProps) => {
+  const { publicUser } = useAuth();
+
   return (
     <div className={`${styles.dialog} ${open ? styles.open : ""}`}>
       <div className={styles.dialogContainer}>
@@ -40,6 +43,7 @@ export const UpdateEmailDialog = ({
                 placeholder="name@domain.com"
                 margin="normal"
                 required
+                value={publicUser?.email || ""}
               />
             </FormControl>
           </div>

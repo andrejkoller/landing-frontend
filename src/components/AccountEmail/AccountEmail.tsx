@@ -2,9 +2,11 @@ import { MailIcon } from "lucide-react";
 import styles from "./AccountEmail.module.css";
 import { ButtonBase } from "@mui/material";
 import { useDialog } from "@/hooks/useDialog";
+import { useAuth } from "@/hooks/useAuth";
 
 export const AccountEmail = () => {
   const { openUpdateEmailDialog } = useDialog();
+  const { publicUser } = useAuth();
 
   return (
     <div className={styles.accountEmail}>
@@ -12,9 +14,7 @@ export const AccountEmail = () => {
       <div className={styles.accountEmailContainer}>
         <div className={styles.accountEmailFieldGroup}>
           <MailIcon className={styles.accountEmailIcon} />
-          <p className={styles.accountEmailDescription}>
-            andrejkoller@outlook.com
-          </p>
+          <p className={styles.accountEmailDescription}>{publicUser?.email}</p>
         </div>
         <div className={styles.accountEmailButtonContainer}>
           <ButtonBase

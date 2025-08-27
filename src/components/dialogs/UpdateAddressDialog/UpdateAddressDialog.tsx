@@ -5,6 +5,7 @@ import { XIcon } from "lucide-react";
 import { formControlSx } from "@/utils/formControlSx";
 import { closeButtonSx } from "@/utils/closeButtonSx";
 import { buttonBaseSx } from "@/utils/buttonBaseSx";
+import { useAuth } from "@/hooks/useAuth";
 
 interface UpdateAddressDialogProps {
   open: boolean;
@@ -15,6 +16,8 @@ export const UpdateAddressDialog = ({
   open,
   onClose,
 }: UpdateAddressDialogProps) => {
+  const { publicUser } = useAuth();
+
   return (
     <div className={`${styles.dialog} ${open ? styles.open : ""}`}>
       <div className={styles.dialogContainer}>
@@ -38,6 +41,7 @@ export const UpdateAddressDialog = ({
                 label="Street"
                 placeholder="123 Main St"
                 type="text"
+                value={publicUser?.street || ""}
                 variant="outlined"
                 fullWidth
                 margin="normal"
@@ -52,6 +56,7 @@ export const UpdateAddressDialog = ({
                 label="City"
                 placeholder="Los Angeles"
                 type="text"
+                value={publicUser?.city || ""}
                 variant="outlined"
                 fullWidth
                 margin="normal"
@@ -66,6 +71,7 @@ export const UpdateAddressDialog = ({
                 label="State"
                 placeholder="CA"
                 type="text"
+                value={publicUser?.state || ""}
                 variant="outlined"
                 fullWidth
                 margin="normal"
@@ -80,6 +86,7 @@ export const UpdateAddressDialog = ({
                 label="Zip Code"
                 placeholder="12345"
                 type="text"
+                value={publicUser?.zipCode || ""}
                 variant="outlined"
                 fullWidth
                 margin="normal"

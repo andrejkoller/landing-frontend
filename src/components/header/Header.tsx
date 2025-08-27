@@ -6,6 +6,7 @@ import { ButtonBase } from "@mui/material";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { AnimatedLink } from "../AnimatedLink/AnimatedLink";
+import { useAuth } from "@/hooks/useAuth";
 
 interface HeaderProps {
   activeDropdown?: string;
@@ -13,6 +14,7 @@ interface HeaderProps {
 }
 
 export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
+  const { publicUser } = useAuth();
   const productsDropdownRef = useRef<HTMLUListElement>(null);
   const learnDropdownRef = useRef<HTMLUListElement>(null);
   const closeTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -99,18 +101,33 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
             </ul>
           </nav>
         </div>
-        <div className={styles.headerAccountLinksContainer}>
-          <Link href={"/signin"} className={styles.headerAccountLink}>
-            Log In
-          </Link>
-          <AnimatedLink
-            href={"/signup"}
-            hoverType={"background"}
-            className={styles.headerAccountLink}
-          >
-            Sign Up
-          </AnimatedLink>
-        </div>
+        {publicUser ? (
+          <div className={styles.headerAccountLinksContainer}>
+            <Link href={"/account"} className={styles.headerAccountLink}>
+              Account
+            </Link>
+          </div>
+        ) : (
+          <div className={styles.headerAccountLinksContainer}>
+            <Link
+              href={
+                "http://localhost:3001/signin?redirect=http://localhost:3000/callback"
+              }
+              className={styles.headerAccountLink}
+            >
+              Log In
+            </Link>
+            <AnimatedLink
+              href={
+                "http://localhost:3001/signup?redirect=http://localhost:3000/callback"
+              }
+              hoverType={"background"}
+              className={styles.headerAccountLink}
+            >
+              Sign Up
+            </AnimatedLink>
+          </div>
+        )}
       </div>
       {activeDropdown === "products" && (
         <ul

@@ -14,6 +14,7 @@ import { UpdateAddressDialog } from "@/components/dialogs/UpdateAddressDialog/Up
 import { UpdateNameDialog } from "@/components/dialogs/UpdateNameDialog/UpdateNameDialog";
 import { UpdatePhoneNumberDialog } from "@/components/dialogs/UpdatePhoneNumberDialog/UpdatePhoneNumberDialog";
 import { useDialog } from "@/hooks/useDialog";
+import { AuthProvider } from "@/contexts/AuthProvider";
 
 const Dialogs = () => {
   const {
@@ -60,17 +61,19 @@ export default function LayoutClient({
   const showAccountSettingsHeader = pathname.startsWith("/account");
 
   return (
-    <ThemeProvider>
-      <DialogProvider>
-        <LayoutContent
-          activeDropdown={activeDropdown}
-          setActiveDropdown={setActiveDropdown}
-          showAccountSettingsHeader={showAccountSettingsHeader}
-        >
-          {children}
-        </LayoutContent>
-      </DialogProvider>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider>
+        <DialogProvider>
+          <LayoutContent
+            activeDropdown={activeDropdown}
+            setActiveDropdown={setActiveDropdown}
+            showAccountSettingsHeader={showAccountSettingsHeader}
+          >
+            {children}
+          </LayoutContent>
+        </DialogProvider>
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 
