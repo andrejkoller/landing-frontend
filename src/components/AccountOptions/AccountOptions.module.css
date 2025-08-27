@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
 }
 
 .accountOptionsHeading {
@@ -27,7 +28,6 @@
   background-color: var(--bg-main);
   padding: 1rem;
   border-radius: var(--border-radius-lg);
-  border: 1px solid var(--border-default);
 }
 
 .accountField {

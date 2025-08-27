@@ -6,7 +6,7 @@
   background-color: var(--bg-main);
   height: 100vh;
   width: 100%;
-  max-width: 1440px;
+  max-width: var(--modal-max-width);
   margin: 0 auto;
   position: fixed;
   top: 100vh;
@@ -14,7 +14,7 @@
   right: 0;
   z-index: var(--z-index-modal);
   transition: top 0.3s ease-in-out;
-  padding: 0 7.5rem;
+  padding: 1rem 7.5rem;
   box-sizing: border-box;
 }
 
@@ -79,10 +79,10 @@
   min-width: 100%;
   font-size: 1.125rem;
   line-height: var(--line-height-base);
-  transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
+  transition: var(--transition-scale);
   text-decoration: none;
   color: var(--text-default);
-  font-weight: 600;
+  font-weight: var(--font-weight-500);
   background-color: var(--bg-main);
   cursor: pointer;
   box-sizing: border-box;

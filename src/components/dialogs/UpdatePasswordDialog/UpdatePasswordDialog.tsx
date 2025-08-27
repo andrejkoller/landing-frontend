@@ -1,10 +1,10 @@
-import { AnimatedButton } from "@/components/AnimatedButton/AnimatedButton";
 import { textFieldSx } from "@/utils/textFieldSx";
 import { ButtonBase, FormControl, TextField } from "@mui/material";
 import styles from "../dialog.module.css";
 import { formControlSx } from "@/utils/formControlSx";
 import { XIcon } from "lucide-react";
 import { closeButtonSx } from "@/utils/closeButtonSx";
+import { buttonBaseSx } from "@/utils/buttonBaseSx";
 
 interface UpdatePasswordDialogProps {
   open: boolean;
@@ -58,13 +58,13 @@ export const UpdatePasswordDialog = ({
             </FormControl>
           </div>
           <div className={styles.dialogActions}>
-            <AnimatedButton
+            <ButtonBase
+              sx={buttonBaseSx}
               type={"submit"}
               className={styles.dialogButton}
-              hoverType={"background"}
             >
               Save
-            </AnimatedButton>
+            </ButtonBase>
           </div>
         </form>
       </div>

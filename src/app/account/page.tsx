@@ -11,15 +11,11 @@ export default function Page() {
   return (
     <div className={styles.accountContainer}>
       <div className={styles.accountContent}>
-        <div className={styles.accountLeft}>
-          <AccountCard />
-          <AccountOptions />
-        </div>
-        <div className={styles.accountRight}>
-          <AccountEmail />
-          <AccountPhoneNumber />
-          <AccountAddress />
-        </div>
+        <AccountCard />
+        <AccountEmail />
+        <AccountPhoneNumber />
+        <AccountAddress />
+        <AccountOptions />
       </div>
     </div>
   );

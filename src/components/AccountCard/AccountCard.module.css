@@ -7,7 +7,6 @@
   width: -webkit-fill-available;
   background-color: var(--bg-main);
   border-radius: var(--border-radius-lg);
-  border: 1px solid var(--border-default);
   overflow: hidden;
   position: relative;
 }

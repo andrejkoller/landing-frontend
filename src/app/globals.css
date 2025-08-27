@@ -4,6 +4,9 @@
 
   --header-height: 5.5rem;
   --header-max-width: 1440px;
+  --account-max-width: 768px;
+  --modal-max-width: 768px;
+  --f-col-width: calc(min(100vw, 1680px) / 48);
 
   --profile-picture-size: 2.75rem;
 
@@ -28,6 +31,8 @@
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.25rem;
   --font-size-xxl: 1.5rem;
+  --font-size-xxxl: 1.75rem;
+  --font-size-xxxxl: 2rem;
 
   --font-weight-100: 100;
   --font-weight-200: 200;
@@ -49,6 +54,8 @@
   --z-index-dialog-backdrop: 2500;
   --z-index-modal: 3000;
   --z-index-tooltip: 4000;
+
+  --transition-scale: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
 
   --bg-main: #ffffff;
   --bg-secondary: #f2f9ff;
