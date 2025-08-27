@@ -14,6 +14,7 @@ export default function AccountLayout({
   useEffect(() => {
     if (!publicUser) {
       window.location.href =
+        process.env.NEXT_PUBLIC_SIGNIN_REDIRECT_URL ||
         "http://localhost:3001/signin?redirect=http://localhost:3000/callback";
     }
   }, [publicUser]);

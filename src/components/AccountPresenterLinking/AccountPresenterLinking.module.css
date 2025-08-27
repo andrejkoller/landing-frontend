@@ -1,0 +1,49 @@
+.accountPresenterLinking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.accountPresenterLinkingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: -webkit-fill-available;
+  background-color: var(--bg-main);
+  padding: 1rem;
+  border-radius: var(--border-radius-lg);
+}
+
+.accountPresenterLinkingFieldGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.accountPresenterLinkingDescription {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-500);
+  color: var(--text-default);
+}
+
+.accountPresenterLinkingActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.accountPresenterLinkingLink {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-inter);
+  color: var(--text-default);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}

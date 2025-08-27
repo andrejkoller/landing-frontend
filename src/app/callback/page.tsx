@@ -16,7 +16,8 @@ export default function Page() {
       router.push("/account");
     } else {
       router.push(
-        "http://localhost:3001/signin?redirect=http://localhost:3000/callback"
+        process.env.NEXT_PUBLIC_SIGNIN_REDIRECT_URL ||
+          "http://localhost:3001/signin?redirect=http://localhost:3000/callback"
       );
     }
   }, [router]);

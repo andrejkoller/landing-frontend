@@ -37,7 +37,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     removeAuthToken();
     setPublicUser(null);
     router.push(
-      "http://localhost:3001/signin?redirect=http://localhost:3000/callback"
+      process.env.NEXT_PUBLIC_SIGNIN_REDIRECT_URL ||
+        "http://localhost:3001/signin?redirect=http://localhost:3000/callback"
     );
   };
 
