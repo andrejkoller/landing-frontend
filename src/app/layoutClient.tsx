@@ -10,9 +10,7 @@ import { usePathname } from "next/navigation";
 import { AccountSettingsHeader } from "@/components/AccountSettingsHeader/AccountSettingsHeader";
 import { UpdateEmailDialog } from "@/components/dialogs/UpdateEmailDialog/UpdateEmailDialog";
 import { DialogProvider } from "@/contexts/DialogProvider";
-import { UpdateAddressDialog } from "@/components/dialogs/UpdateAddressDialog/UpdateAddressDialog";
 import { UpdateNameDialog } from "@/components/dialogs/UpdateNameDialog/UpdateNameDialog";
-import { UpdatePhoneNumberDialog } from "@/components/dialogs/UpdatePhoneNumberDialog/UpdatePhoneNumberDialog";
 import { useDialog } from "@/hooks/useDialog";
 import { AuthProvider } from "@/contexts/AuthProvider";
 
@@ -22,10 +20,6 @@ const Dialogs = () => {
     closeUpdateEmailDialog,
     isUpdateNameDialogOpen,
     closeUpdateNameDialog,
-    isUpdatePhoneNumberDialogOpen,
-    closeUpdatePhoneNumberDialog,
-    isUpdateAddressDialogOpen,
-    closeUpdateAddressDialog,
   } = useDialog();
 
   return (
@@ -37,14 +31,6 @@ const Dialogs = () => {
       <UpdateNameDialog
         open={isUpdateNameDialogOpen}
         onClose={closeUpdateNameDialog}
-      />
-      <UpdatePhoneNumberDialog
-        open={isUpdatePhoneNumberDialogOpen}
-        onClose={closeUpdatePhoneNumberDialog}
-      />
-      <UpdateAddressDialog
-        open={isUpdateAddressDialogOpen}
-        onClose={closeUpdateAddressDialog}
       />
     </>
   );
@@ -91,19 +77,11 @@ function LayoutContent({
   const {
     isUpdateEmailDialogOpen,
     isUpdateNameDialogOpen,
-    isUpdatePhoneNumberDialogOpen,
-    isUpdateAddressDialogOpen,
     closeUpdateEmailDialog,
     closeUpdateNameDialog,
-    closeUpdatePhoneNumberDialog,
-    closeUpdateAddressDialog,
   } = useDialog();
 
-  const isAnyDialogOpen =
-    isUpdateEmailDialogOpen ||
-    isUpdateNameDialogOpen ||
-    isUpdatePhoneNumberDialogOpen ||
-    isUpdateAddressDialogOpen;
+  const isAnyDialogOpen = isUpdateEmailDialogOpen || isUpdateNameDialogOpen;
 
   const handleDropdownBackdropClick = () => {
     if (activeDropdown !== null) {
@@ -115,8 +93,6 @@ function LayoutContent({
     if (isAnyDialogOpen) {
       closeUpdateEmailDialog();
       closeUpdateNameDialog();
-      closeUpdatePhoneNumberDialog();
-      closeUpdateAddressDialog();
     }
   };
 

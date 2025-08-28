@@ -3,20 +3,36 @@
 import { useAuth } from "@/hooks/useAuth";
 import styles from "./layout.module.css";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AccountLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { publicUser } = useAuth();
+  const { publicUser, loading } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
-    if (!publicUser) {
-      window.location.href =
+    if (!loading && !publicUser) {
+      router.push(
         process.env.NEXT_PUBLIC_SIGNIN_REDIRECT_URL ||
-        "http://localhost:3001/signin?redirect=http://localhost:3000/callback";
+          "http://localhost:3001/signin?redirect=http://localhost:3000/callback"
+      );
     }
-  }, [publicUser]);
-  return <div className={styles.account}>{children}</div>;
+  }, [publicUser, loading, router]);
+
+  if (loading) {
+    return (
+      <div className={styles.account}>
+        <div>Loading...</div>
+      </div>
+    );
+  }
+
+  if (publicUser) {
+    return <div className={styles.account}>{children}</div>;
+  }
+
+  return null;
 }

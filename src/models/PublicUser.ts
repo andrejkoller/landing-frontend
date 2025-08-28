@@ -1,11 +1,6 @@
 export interface PublicUser {
+  id: string;
   firstName: string;
   lastName: string;
   email: string;
-  phoneNumber?: string;
-  street?: string;
-  city?: string;
-  state?: string;
-  zipCode?: string;
-  country?: string;
 }

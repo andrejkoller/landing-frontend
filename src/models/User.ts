@@ -3,7 +3,6 @@ export interface User {
   firstName: string;
   lastName: string;
   email: string;
-  phoneNumber: string;
   createdAt: Date;
   updatedAt: Date;
   lastLogin: Date;

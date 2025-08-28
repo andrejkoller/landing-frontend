@@ -6,6 +6,8 @@ import { formControlSx } from "@/utils/formControlSx";
 import { closeButtonSx } from "@/utils/closeButtonSx";
 import { buttonBaseSx } from "@/utils/buttonBaseSx";
 import { useAuth } from "@/hooks/useAuth";
+import { useState, useEffect } from "react";
+import { updateUser } from "@/services/userService";
 
 interface UpdateNameDialogProps {
   open: boolean;
@@ -13,7 +15,44 @@ interface UpdateNameDialogProps {
 }
 
 export const UpdateNameDialog = ({ open, onClose }: UpdateNameDialogProps) => {
-  const { publicUser } = useAuth();
+  const { publicUser, refreshUser, refreshing } = useAuth();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (open && publicUser) {
+      setFirstName(publicUser.firstName || "");
+      setLastName(publicUser.lastName || "");
+    }
+  }, [open, publicUser]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!publicUser?.id) {
+      console.error("No user ID available");
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await updateUser({
+        id: publicUser.id,
+        firstName,
+        lastName,
+      });
+
+      await refreshUser();
+      onClose();
+    } catch (error) {
+      console.error("Failed to update user:", error);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const isLoading = submitting || refreshing;
 
   return (
     <div className={`${styles.dialog} ${open ? styles.open : ""}`}>
@@ -27,7 +66,7 @@ export const UpdateNameDialog = ({ open, onClose }: UpdateNameDialogProps) => {
             <XIcon />
           </ButtonBase>
         </div>
-        <form className={styles.dialogForm}>
+        <form className={styles.dialogForm} onSubmit={handleSubmit}>
           <div className={styles.dialogTitle}>
             <h3>Change your name</h3>
           </div>
@@ -41,7 +80,8 @@ export const UpdateNameDialog = ({ open, onClose }: UpdateNameDialogProps) => {
                 margin="normal"
                 required
                 autoFocus
-                value={publicUser?.firstName || ""}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
               />
             </FormControl>
           </div>
@@ -54,7 +94,8 @@ export const UpdateNameDialog = ({ open, onClose }: UpdateNameDialogProps) => {
                 placeholder="Koller"
                 margin="normal"
                 required
-                value={publicUser?.lastName || ""}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
             </FormControl>
           </div>
@@ -63,8 +104,9 @@ export const UpdateNameDialog = ({ open, onClose }: UpdateNameDialogProps) => {
               sx={buttonBaseSx}
               type={"submit"}
               className={styles.dialogButton}
+              disabled={isLoading}
             >
-              Save
+              {isLoading ? "Saving..." : "Save"}
             </ButtonBase>
           </div>
         </form>

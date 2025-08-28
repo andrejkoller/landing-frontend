@@ -18,14 +18,29 @@ export const removeAuthToken = (): void => {
 
 export const isTokenValid = (): boolean => {
   const token = getAuthToken();
-  if (!token) return false;
+  if (!token) {
+    return false;
+  }
 
   try {
-    const payload = JSON.parse(atob(token.split(".")[1]));
-    const currentTime = Math.floor(Date.now() / 1000);
-    return payload.exp > currentTime;
+    const parts = token.split(".");
+    if (parts.length !== 3) {
+      return false;
+    }
+
+    const payload = JSON.parse(atob(parts[1]));
+    const exp = payload.exp;
+    
+    if (!exp) {
+      return false;
+    }
+    
+    const now = Date.now();
+    const expTime = exp * 1000;
+    
+    return now < expTime;
   } catch (error) {
-    console.error("Error validating token:", error);
+    console.error("TokenService: Error validating token:", error);
     return false;
   }
 };

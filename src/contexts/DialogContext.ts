@@ -8,14 +8,6 @@ interface DialogContextType {
   isUpdateNameDialogOpen: boolean;
   openUpdateNameDialog: () => void;
   closeUpdateNameDialog: () => void;
-
-  isUpdatePhoneNumberDialogOpen: boolean;
-  openUpdatePhoneNumberDialog: () => void;
-  closeUpdatePhoneNumberDialog: () => void;
-
-  isUpdateAddressDialogOpen: boolean;
-  openUpdateAddressDialog: () => void;
-  closeUpdateAddressDialog: () => void;
 }
 
 export const DialogContext = createContext<DialogContextType | undefined>(

@@ -15,7 +15,6 @@ axiosInstance.interceptors.request.use(
       config.headers.Authorization = `Bearer ${token}`;
     } else if (token && !isTokenValid()) {
       removeAuthToken();
-      window.location.href = "/signin";
     }
     return config;
   },
@@ -30,8 +29,10 @@ axiosInstance.interceptors.response.use(
   },
   (error) => {
     if (error.response && error.response.status === 401) {
-      console.error("Unauthorized! Redirecting to signin...");
-      window.location.href = "/signin";
+      removeAuthToken();
+      window.location.href =
+        process.env.NEXT_PUBLIC_SIGNIN_REDIRECT_URL ||
+        "http://localhost:3001/signin?redirect=http://localhost:3000/callback";
     }
     return Promise.reject(error);
   }

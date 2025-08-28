@@ -15,8 +15,7 @@ interface AccountHeaderProps {
 
 export const AccountSettingsHeader = ({
   navItems = [
-    { href: "/account/apps", label: "Apps" },
-    { href: "/account/profile", label: "Profile" },
+    { href: "/account/profile", label: "Account" },
     { href: "/account/security", label: "Security" },
     { href: "/account/notifications", label: "Notifications" },
     { href: "/account/activity", label: "Activity" },
