@@ -6,6 +6,8 @@ import { formControlSx } from "@/utils/formControlSx";
 import { closeButtonSx } from "@/utils/closeButtonSx";
 import { buttonBaseSx } from "@/utils/buttonBaseSx";
 import { useAuth } from "@/hooks/useAuth";
+import { updateUserEmail } from "@/services/userService";
+import { useState, useEffect } from "react";
 
 interface UpdateEmailDialogProps {
   open: boolean;
@@ -16,7 +18,41 @@ export const UpdateEmailDialog = ({
   open,
   onClose,
 }: UpdateEmailDialogProps) => {
-  const { publicUser } = useAuth();
+  const { publicUser, refreshUser, refreshing } = useAuth();
+  const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (open && publicUser) {
+      setEmail(publicUser.email || "");
+    }
+  }, [open, publicUser]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!publicUser?.id) {
+      console.error("No user ID available");
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await updateUserEmail({
+        id: publicUser.id,
+        email,
+      });
+
+      await refreshUser();
+      onClose();
+    } catch (error) {
+      console.error("Failed to update user:", error);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const isLoading = submitting || refreshing;
 
   return (
     <div className={`${styles.dialog} ${open ? styles.open : ""}`}>
@@ -30,7 +66,7 @@ export const UpdateEmailDialog = ({
             <XIcon />
           </ButtonBase>
         </div>
-        <form className={styles.dialogForm}>
+        <form className={styles.dialogForm} onSubmit={handleSubmit}>
           <div className={styles.dialogTitle}>
             <h3>Edit your email</h3>
           </div>
@@ -43,7 +79,9 @@ export const UpdateEmailDialog = ({
                 placeholder="name@domain.com"
                 margin="normal"
                 required
-                value={publicUser?.email || ""}
+                autoFocus
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </FormControl>
           </div>
@@ -52,8 +90,9 @@ export const UpdateEmailDialog = ({
               sx={buttonBaseSx}
               type={"submit"}
               className={styles.dialogButton}
+              disabled={isLoading}
             >
-              Save
+              {isLoading ? "Saving..." : "Save"}
             </ButtonBase>
           </div>
         </form>

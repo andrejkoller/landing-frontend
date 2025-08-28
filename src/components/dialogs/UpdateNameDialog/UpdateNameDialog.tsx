@@ -7,7 +7,7 @@ import { closeButtonSx } from "@/utils/closeButtonSx";
 import { buttonBaseSx } from "@/utils/buttonBaseSx";
 import { useAuth } from "@/hooks/useAuth";
 import { useState, useEffect } from "react";
-import { updateUser } from "@/services/userService";
+import { updateUserName } from "@/services/userService";
 
 interface UpdateNameDialogProps {
   open: boolean;
@@ -37,7 +37,7 @@ export const UpdateNameDialog = ({ open, onClose }: UpdateNameDialogProps) => {
 
     setSubmitting(true);
     try {
-      await updateUser({
+      await updateUserName({
         id: publicUser.id,
         firstName,
         lastName,
