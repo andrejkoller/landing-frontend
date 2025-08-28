@@ -22,7 +22,7 @@ export const updateUserName = async (userData: UpdateNameRequest) => {
   }
 
   try {
-    const res = await fetch(`${API_BASE_URL}/user/${userData.id}`, {
+    const res = await fetch(`${API_BASE_URL}/user/${userData.id}/name`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
