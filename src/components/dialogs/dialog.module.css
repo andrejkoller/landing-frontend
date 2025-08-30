@@ -34,7 +34,7 @@
 .dialogHeader {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 1.5rem;
 }
@@ -52,14 +52,9 @@
   width: 100%;
 }
 
-.dialogTitle {
-  width: 100%;
-  text-align: center;
-}
-
 .dialogTitle h3 {
   margin: 0;
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-600);
   color: var(--text-default);
 }
@@ -70,7 +65,10 @@
 
 .dialogActions {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
   margin-top: 1.5rem;
 }

@@ -1,9 +1,9 @@
-.activityContainer {
+.billingContainer {
   display: flex;
   flex-direction: column;
 }
 
-.activityContent {
+.billingContent {
   display: flex;
   flex-direction: column;
 }

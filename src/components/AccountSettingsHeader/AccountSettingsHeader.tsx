@@ -19,6 +19,8 @@ export const AccountSettingsHeader = ({
     { href: "/account/security", label: "Security" },
     { href: "/account/notifications", label: "Notifications" },
     { href: "/account/activity", label: "Activity" },
+    { href: "/account/billing", label: "Billing" },
+    { href: "/account/members", label: "Members" },
   ],
 }: AccountHeaderProps) => {
   const pathname = usePathname();

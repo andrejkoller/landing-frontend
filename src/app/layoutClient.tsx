@@ -13,6 +13,7 @@ import { DialogProvider } from "@/contexts/DialogProvider";
 import { UpdateNameDialog } from "@/components/dialogs/UpdateNameDialog/UpdateNameDialog";
 import { useDialog } from "@/hooks/useDialog";
 import { AuthProvider } from "@/contexts/AuthProvider";
+import { AcceptAccountDeletion } from "@/components/dialogs/AcceptAccountDeletion/AcceptAccountDeletion";
 
 const Dialogs = () => {
   const {
@@ -20,6 +21,8 @@ const Dialogs = () => {
     closeUpdateEmailDialog,
     isUpdateNameDialogOpen,
     closeUpdateNameDialog,
+    isAcceptAccountDeletionOpen,
+    closeAcceptAccountDeletion,
   } = useDialog();
 
   return (
@@ -31,6 +34,10 @@ const Dialogs = () => {
       <UpdateNameDialog
         open={isUpdateNameDialogOpen}
         onClose={closeUpdateNameDialog}
+      />
+      <AcceptAccountDeletion
+        open={isAcceptAccountDeletionOpen}
+        onClose={closeAcceptAccountDeletion}
       />
     </>
   );
@@ -79,9 +86,14 @@ function LayoutContent({
     isUpdateNameDialogOpen,
     closeUpdateEmailDialog,
     closeUpdateNameDialog,
+    isAcceptAccountDeletionOpen,
+    closeAcceptAccountDeletion,
   } = useDialog();
 
-  const isAnyDialogOpen = isUpdateEmailDialogOpen || isUpdateNameDialogOpen;
+  const isAnyDialogOpen =
+    isUpdateEmailDialogOpen ||
+    isUpdateNameDialogOpen ||
+    isAcceptAccountDeletionOpen;
 
   const handleDropdownBackdropClick = () => {
     if (activeDropdown !== null) {
@@ -93,6 +105,7 @@ function LayoutContent({
     if (isAnyDialogOpen) {
       closeUpdateEmailDialog();
       closeUpdateNameDialog();
+      closeAcceptAccountDeletion();
     }
   };
 

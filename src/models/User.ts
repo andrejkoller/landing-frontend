@@ -9,4 +9,5 @@ export interface User {
   lastPasswordChange: Date;
   isEmailVerified: boolean;
   isActive: boolean;
+  isNewsletterSubscribed: boolean;
 }

@@ -1,9 +1,9 @@
-.activityContainer {
+.membersContainer {
   display: flex;
   flex-direction: column;
 }
 
-.activityContent {
+.membersContent {
   display: flex;
   flex-direction: column;
 }

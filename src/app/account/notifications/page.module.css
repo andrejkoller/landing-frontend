@@ -1,0 +1,9 @@
+.notificationsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.notificationsContent {
+  display: flex;
+  flex-direction: column;
+}

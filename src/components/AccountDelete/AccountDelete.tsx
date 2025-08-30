@@ -1,6 +1,9 @@
+import { useDialog } from "@/hooks/useDialog";
 import { ButtonBase } from "@mui/material";
 
 export const AccountDelete = () => {
+  const { openAcceptAccountDeletion } = useDialog();
+
   return (
     <ButtonBase
       sx={{
@@ -15,6 +18,7 @@ export const AccountDelete = () => {
         fontFamily: "Arial",
         fontSize: "1rem",
       }}
+      onClick={openAcceptAccountDeletion}
     >
       <span>Delete Account</span>
     </ButtonBase>

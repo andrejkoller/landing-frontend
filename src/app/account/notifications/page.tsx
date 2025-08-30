@@ -2,8 +2,8 @@ import styles from "./page.module.css";
 
 export default function Page() {
   return (
-    <section className={styles.notificationsSection}>
-      <div className={styles.notificationsContainer}></div>
-    </section>
+    <div className={styles.notificationsContainer}>
+      <div className={styles.notificationsContent}></div>
+    </div>
   );
 }

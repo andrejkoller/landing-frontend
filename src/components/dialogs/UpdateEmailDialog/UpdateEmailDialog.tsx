@@ -58,6 +58,9 @@ export const UpdateEmailDialog = ({
     <div className={`${styles.dialog} ${open ? styles.open : ""}`}>
       <div className={styles.dialogContainer}>
         <div className={styles.dialogHeader}>
+          <div className={styles.dialogTitle}>
+            <h3>Edit your email</h3>
+          </div>
           <ButtonBase
             sx={closeButtonSx}
             className={styles.dialogCloseButton}
@@ -67,9 +70,6 @@ export const UpdateEmailDialog = ({
           </ButtonBase>
         </div>
         <form className={styles.dialogForm} onSubmit={handleSubmit}>
-          <div className={styles.dialogTitle}>
-            <h3>Edit your email</h3>
-          </div>
           <div className={styles.dialogField}>
             <FormControl sx={formControlSx} fullWidth>
               <TextField

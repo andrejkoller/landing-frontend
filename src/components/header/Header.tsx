@@ -36,14 +36,18 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
   useEffect(() => {
     if (activeDropdown === "products" && productsDropdownRef.current) {
       const dropdown = productsDropdownRef.current;
-      dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
+      const scrollHeight = dropdown.scrollHeight;
+      dropdown.style.setProperty("--dropdown-height", `${scrollHeight}px`);
+      dropdown.style.maxHeight = `${scrollHeight}px`;
     } else if (productsDropdownRef.current) {
       productsDropdownRef.current.style.maxHeight = "0px";
     }
 
     if (activeDropdown === "learn" && learnDropdownRef.current) {
       const dropdown = learnDropdownRef.current;
-      dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
+      const scrollHeight = dropdown.scrollHeight;
+      dropdown.style.setProperty("--dropdown-height", `${scrollHeight}px`);
+      dropdown.style.maxHeight = `${scrollHeight}px`;
     } else if (learnDropdownRef.current) {
       learnDropdownRef.current.style.maxHeight = "0px";
     }
@@ -131,66 +135,66 @@ export const Header = ({ activeDropdown, setActiveDropdown }: HeaderProps) => {
           </div>
         )}
       </div>
-      {activeDropdown === "products" && (
-        <ul
-          ref={productsDropdownRef}
-          className={`${styles.dropdownMenu} ${styles.open}`}
-          onMouseEnter={() => handleMouseEnter("products")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className={styles.dropdownContent}>
-            <li className={styles.dropdownItem}>
-              <AnimatedLink href={"/presenter"} className={styles.dropdownLink}>
-                Presenter
-              </AnimatedLink>
-            </li>
-            <li className={styles.dropdownItem}>
-              <AnimatedLink href={"/visuals"} className={styles.dropdownLink}>
-                Visuals
-              </AnimatedLink>
-            </li>
-            <li className={styles.dropdownItem}>
-              <AnimatedLink
-                href={"/videoplayer"}
-                className={styles.dropdownLink}
-              >
-                Video Player
-              </AnimatedLink>
-            </li>
-          </div>
-        </ul>
-      )}
-      {activeDropdown === "learn" && (
-        <ul
-          ref={learnDropdownRef}
-          className={`${styles.dropdownMenu} ${styles.open}`}
-          onMouseEnter={() => handleMouseEnter("learn")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className={styles.dropdownContent}>
-            <li className={styles.dropdownItem}>
-              <AnimatedLink href={"/blog"} className={styles.dropdownLink}>
-                Blog
-              </AnimatedLink>
-            </li>
-            <li className={styles.dropdownItem}>
-              <AnimatedLink href={"/tutorials"} className={styles.dropdownLink}>
-                Tutorials
-              </AnimatedLink>
-            </li>
-            <li className={styles.dropdownItem}>
-              <AnimatedLink href={"/updates"} className={styles.dropdownLink}>
-                Updates
-              </AnimatedLink>
-            </li>
-            <li className={styles.dropdownItem}>
-              <AnimatedLink href={"/features"} className={styles.dropdownLink}>
-                Features
-              </AnimatedLink>
-            </li>
-          </div>
-        </ul>
-      )}
+      {/* Products Dropdown - Immer gerendert für smooth transitions */}
+      <ul
+        ref={productsDropdownRef}
+        className={`${styles.dropdownMenu} ${
+          activeDropdown === "products" ? styles.open : ""
+        }`}
+        onMouseEnter={() => handleMouseEnter("products")}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className={styles.dropdownContent}>
+          <li className={styles.dropdownItem}>
+            <AnimatedLink href={"/presenter"} className={styles.dropdownLink}>
+              Presenter
+            </AnimatedLink>
+          </li>
+          <li className={styles.dropdownItem}>
+            <AnimatedLink href={"/visuals"} className={styles.dropdownLink}>
+              Visuals
+            </AnimatedLink>
+          </li>
+          <li className={styles.dropdownItem}>
+            <AnimatedLink href={"/videoplayer"} className={styles.dropdownLink}>
+              Video Player
+            </AnimatedLink>
+          </li>
+        </div>
+      </ul>
+
+      {/* Learn Dropdown - Immer gerendert für smooth transitions */}
+      <ul
+        ref={learnDropdownRef}
+        className={`${styles.dropdownMenu} ${
+          activeDropdown === "learn" ? styles.open : ""
+        }`}
+        onMouseEnter={() => handleMouseEnter("learn")}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className={styles.dropdownContent}>
+          <li className={styles.dropdownItem}>
+            <AnimatedLink href={"/blog"} className={styles.dropdownLink}>
+              Blog
+            </AnimatedLink>
+          </li>
+          <li className={styles.dropdownItem}>
+            <AnimatedLink href={"/tutorials"} className={styles.dropdownLink}>
+              Tutorials
+            </AnimatedLink>
+          </li>
+          <li className={styles.dropdownItem}>
+            <AnimatedLink href={"/updates"} className={styles.dropdownLink}>
+              Updates
+            </AnimatedLink>
+          </li>
+          <li className={styles.dropdownItem}>
+            <AnimatedLink href={"/features"} className={styles.dropdownLink}>
+              Features
+            </AnimatedLink>
+          </li>
+        </div>
+      </ul>
     </header>
   );
 };

@@ -1,0 +1,9 @@
+.securityContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.securityContent {
+  display: flex;
+  flex-direction: column;
+}

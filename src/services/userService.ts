@@ -96,3 +96,71 @@ export const updateUserEmail = async (userData: UpdateEmailRequest) => {
     throw error;
   }
 };
+
+export const deactivateUser = async (userId: string) => {
+  const token = getAuthToken();
+
+  if (!token) {
+    throw new Error("No auth token found");
+  }
+
+  if (!userId) {
+    throw new Error("User ID is required");
+  }
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/user/${userId}/deactivate`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error("Error response:", errorText);
+      throw new Error(
+        `Failed to deactivate user: ${res.status} ${res.statusText} - ${errorText}`
+      );
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error("Network error:", error);
+    throw error;
+  }
+};
+
+export const deleteUser = async (userId: string) => {
+  const token = getAuthToken();
+
+  if (!token) {
+    throw new Error("No auth token found");
+  }
+
+  if (!userId) {
+    throw new Error("User ID is required");
+  }
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/user/${userId}/delete`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error("Error response:", errorText);
+      throw new Error(
+        `Failed to delete account: ${res.status} ${res.statusText} - ${errorText}`
+      );
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error("Network error:", error);
+    throw error;
+  }
+};
