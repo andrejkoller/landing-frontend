@@ -4,6 +4,7 @@ import { useAuth } from "@/hooks/useAuth";
 import styles from "./layout.module.css";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { CircularProgress } from "@mui/material";
 
 export default function AccountLayout({
   children,
@@ -25,7 +26,9 @@ export default function AccountLayout({
   if (loading) {
     return (
       <div className={styles.account}>
-        <div>Loading...</div>
+        <div className={styles.loadingContainer}>
+          <CircularProgress />
+        </div>
       </div>
     );
   }

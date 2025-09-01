@@ -6,3 +6,11 @@
   width: 100%;
   background-color: var(--bg-secondary);
 }
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 4rem;
+}
