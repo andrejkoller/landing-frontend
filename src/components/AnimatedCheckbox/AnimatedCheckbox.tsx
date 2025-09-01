@@ -3,10 +3,12 @@ import { useRef } from "react";
 
 export const AnimatedCheckbox = ({
   className,
-  onClick,
+  checked,
+  onChange,
 }: {
   className?: string;
-  onClick?: () => void;
+  checked: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
   const checkboxRef = useRef<HTMLButtonElement>(null);
 
@@ -17,9 +19,10 @@ export const AnimatedCheckbox = ({
     "var(--color-app)",
   ];
 
+  const randomColor =
+    clickColors[Math.floor(Math.random() * clickColors.length)];
+
   const handleClickAnimation = () => {
-    const randomColor =
-      clickColors[Math.floor(Math.random() * clickColors.length)];
     if (checkboxRef.current) {
       checkboxRef.current.style.color = randomColor;
     }
@@ -33,13 +36,17 @@ export const AnimatedCheckbox = ({
           "&:hover": {
             backgroundColor: "transparent",
           },
+          "&.Mui-checked": {
+            color: randomColor,
+          },
         },
       }}
       className={className}
       ref={checkboxRef}
-      onClick={() => {
+      checked={checked}
+      onChange={(e) => {
         handleClickAnimation();
-        onClick?.();
+        onChange?.(e);
       }}
     />
   );

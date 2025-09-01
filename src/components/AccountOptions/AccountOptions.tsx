@@ -1,10 +1,9 @@
-import { FormControlLabel } from "@mui/material";
 import styles from "./AccountOptions.module.css";
-import { AnimatedCheckbox } from "../AnimatedCheckbox/AnimatedCheckbox";
 import { AccountThemeSelect } from "../AccountThemeSelect/AccountThemeSelect";
 import { AccountLanguageSelect } from "../AccountLanguageSelect/AccountLanguageSelect";
 import { AccountLogout } from "../AccountLogout/AccountLogout";
 import { AccountDelete } from "../AccountDelete/AccountDelete";
+import { AccountNewsletterSubscription } from "../AccountNewsletterSubscription/AccountNewsletterSubscription";
 
 export const AccountOptions = () => {
   return (
@@ -18,10 +17,7 @@ export const AccountOptions = () => {
           <AccountLanguageSelect />
         </div>
         <div className={styles.accountField}>
-          <FormControlLabel
-            control={<AnimatedCheckbox />}
-            label="Receive email updates about new versions before they are released"
-          />
+          <AccountNewsletterSubscription />
         </div>
         <div className={styles.accountField}>
           <AccountLogout />

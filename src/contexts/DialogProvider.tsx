@@ -10,6 +10,8 @@ export const DialogProvider = ({ children }: DialogProviderProps) => {
   const [isUpdateNameDialogOpen, setIsUpdateNameDialogOpen] = useState(false);
   const [isAcceptAccountDeletionOpen, setIsAcceptAccountDeletionOpen] =
     useState(false);
+  const [isUpdateAddressDialogOpen, setIsUpdateAddressDialogOpen] =
+    useState(false);
 
   return (
     <DialogContext.Provider
@@ -25,6 +27,10 @@ export const DialogProvider = ({ children }: DialogProviderProps) => {
         isAcceptAccountDeletionOpen,
         openAcceptAccountDeletion: () => setIsAcceptAccountDeletionOpen(true),
         closeAcceptAccountDeletion: () => setIsAcceptAccountDeletionOpen(false),
+
+        isUpdateAddressDialogOpen,
+        openUpdateAddressDialog: () => setIsUpdateAddressDialogOpen(true),
+        closeUpdateAddressDialog: () => setIsUpdateAddressDialogOpen(false),
       }}
     >
       {children}

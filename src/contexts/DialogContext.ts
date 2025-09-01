@@ -12,6 +12,10 @@ interface DialogContextType {
   isAcceptAccountDeletionOpen: boolean;
   openAcceptAccountDeletion: () => void;
   closeAcceptAccountDeletion: () => void;
+
+  isUpdateAddressDialogOpen: boolean;
+  openUpdateAddressDialog: () => void;
+  closeUpdateAddressDialog: () => void;
 }
 
 export const DialogContext = createContext<DialogContextType | undefined>(

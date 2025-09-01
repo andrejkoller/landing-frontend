@@ -9,9 +9,8 @@
 
 .profileContent {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 1.5rem;
   max-width: var(--account-max-width);
   height: 100%;

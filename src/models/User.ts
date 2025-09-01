@@ -1,3 +1,5 @@
+import { Address } from "./Address";
+
 export interface User {
   id: string;
   firstName: string;
@@ -10,4 +12,5 @@ export interface User {
   isEmailVerified: boolean;
   isActive: boolean;
   isNewsletterSubscribed: boolean;
+  address?: Address;
 }
