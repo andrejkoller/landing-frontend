@@ -61,9 +61,11 @@ npm install
 npm run dev
 ```
 
+The application will be available at http://localhost:3000 (or another port if 3000 is in use).
+
 ## 🔌 API Integration
 
-The application communicates with a backend API through the axios instance configured in `src/services/axiosInstance.ts`.
+The application communicates with a backend API through the axios instance configured in `src/services/axios-instance.ts`.
 
 Key Features:
 
