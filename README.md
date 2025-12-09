@@ -61,9 +61,37 @@ npm install
 npm run dev
 ```
 
+## 🔌 API Integration
+
+The application communicates with a backend API through the axios instance configured in `src/services/axiosInstance.ts`.
+
+Key Features:
+
+- Automatic JWT token injection from token service
+- Automatic token refresh on expiration
+- Centralized error handling
+- Base URL configuration via environment variables
+
+Services:
+
+- `user-service.ts` - User profile management and account operations
+- `token-service.ts` - JWT token storage and retrieval
+
+## 🔐 Authentication
+
+The app uses JWT-based authentication with token refresh:
+
+1. User is redirected to auth service for login/signup
+2. JWT tokens (access + refresh) are stored in localStorage
+3. Tokens are automatically included in API requests
+4. Access token is refreshed automatically when expired
+5. AuthProvider manages authentication state across the app
+6. Protected routes redirect to login if token is missing/invalid
+
 ## 🔗 Related
 
 - Backend Repositories: [AuthAPI](https://github.com/andrejkoller/AuthAPI) and [PresenterAPI](https://github.com/andrejkoller/PresenterAPI)
 - Frontend Repositories: [auth-frontend](https://github.com/andrejkoller/auth-frontend) and [presenter-frontend](https://github.com/andrejkoller/presenter-frontend)
+- C++ Application: [Presenter](https://github.com/andrejkoller/Presenter)
 
 ## 📸 Screenshots
